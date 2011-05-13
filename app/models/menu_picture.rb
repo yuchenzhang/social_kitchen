@@ -1,0 +1,2 @@
+class MenuPicture < PlacedPicture
+end

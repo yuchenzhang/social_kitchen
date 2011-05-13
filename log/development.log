@@ -1,0 +1,650 @@
+  [1m[36mSQL (1.5ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (190.3ms)[0m  CREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB
+  [1m[36mSQL (1.0ms)[0m  [1mSHOW KEYS FROM `schema_migrations`[0m
+  [1m[35mSQL (284.3ms)[0m  CREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)
+  [1m[36mSQL (0.5ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.3ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.5ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations`[0m
+Migrating to CreateRecipes (20110510220650)
+  [1m[35mSQL (101.1ms)[0m  CREATE TABLE `recipes` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36mSQL (1.1ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20110510220650')[0m
+Migrating to CreateDishes (20110510220858)
+  [1m[35mSQL (106.1ms)[0m  CREATE TABLE `dishes` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36mSQL (0.9ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20110510220858')[0m
+Migrating to CreateIngredients (20110510220926)
+  [1m[35mSQL (117.1ms)[0m  CREATE TABLE `ingredients` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20110510220926')[0m
+Migrating to CreatePictures (20110510221028)
+  [1m[35mSQL (118.0ms)[0m  CREATE TABLE `pictures` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20110510221028')[0m
+Migrating to CreateUsers (20110510221111)
+  [1m[35mSQL (117.9ms)[0m  CREATE TABLE `users` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20110510221111')[0m
+Migrating to CreateDishCategories (20110510221709)
+  [1m[35mSQL (118.8ms)[0m  CREATE TABLE `dish_categories` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20110510221709')[0m
+Migrating to CreateComments (20110510221813)
+  [1m[35mSQL (106.1ms)[0m  CREATE TABLE `comments` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20110510221813')[0m
+Migrating to CreateWines (20110510222021)
+  [1m[35mSQL (107.0ms)[0m  CREATE TABLE `wines` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20110510222021')[0m
+Migrating to CreateBeers (20110510222025)
+  [1m[35mSQL (107.3ms)[0m  CREATE TABLE `beers` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20110510222025')[0m
+Migrating to CreateLikeButtons (20110510222205)
+  [1m[35mSQL (119.5ms)[0m  CREATE TABLE `like_buttons` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20110510222205')[0m
+Migrating to CreatePrivateMenus (20110510222423)
+  [1m[35mSQL (118.0ms)[0m  CREATE TABLE `private_menus` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20110510222423')[0m
+Migrating to CreateCocktails (20110510222601)
+  [1m[35mSQL (129.3ms)[0m  CREATE TABLE `cocktails` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20110510222601')[0m
+Migrating to CreateCountries (20110511175617)
+  [1m[35mSQL (119.3ms)[0m  CREATE TABLE `countries` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20110511175617')[0m
+Migrating to CreateRegions (20110511175623)
+  [1m[35mSQL (117.9ms)[0m  CREATE TABLE `regions` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20110511175623')[0m
+  [1m[35mSQL (0.7ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations`[0m
+  [1m[35mSQL (0.7ms)[0m  SHOW TABLES
+  [1m[36mSQL (1.0ms)[0m  [1mdescribe `beers`[0m
+  [1m[35mSQL (0.3ms)[0m  SHOW KEYS FROM `beers`
+  [1m[36mSQL (1.0ms)[0m  [1mdescribe `cocktails`[0m
+  [1m[35mSQL (0.3ms)[0m  SHOW KEYS FROM `cocktails`
+  [1m[36mSQL (1.0ms)[0m  [1mdescribe `comments`[0m
+  [1m[35mSQL (0.3ms)[0m  SHOW KEYS FROM `comments`
+  [1m[36mSQL (1.1ms)[0m  [1mdescribe `countries`[0m
+  [1m[35mSQL (0.2ms)[0m  SHOW KEYS FROM `countries`
+  [1m[36mSQL (0.9ms)[0m  [1mdescribe `dish_categories`[0m
+  [1m[35mSQL (0.3ms)[0m  SHOW KEYS FROM `dish_categories`
+  [1m[36mSQL (0.9ms)[0m  [1mdescribe `dishes`[0m
+  [1m[35mSQL (0.2ms)[0m  SHOW KEYS FROM `dishes`
+  [1m[36mSQL (1.0ms)[0m  [1mdescribe `ingredients`[0m
+  [1m[35mSQL (0.5ms)[0m  SHOW KEYS FROM `ingredients`
+  [1m[36mSQL (0.9ms)[0m  [1mdescribe `like_buttons`[0m
+  [1m[35mSQL (0.3ms)[0m  SHOW KEYS FROM `like_buttons`
+  [1m[36mSQL (1.4ms)[0m  [1mdescribe `pictures`[0m
+  [1m[35mSQL (0.2ms)[0m  SHOW KEYS FROM `pictures`
+  [1m[36mSQL (1.0ms)[0m  [1mdescribe `private_menus`[0m
+  [1m[35mSQL (0.2ms)[0m  SHOW KEYS FROM `private_menus`
+  [1m[36mSQL (0.9ms)[0m  [1mdescribe `recipes`[0m
+  [1m[35mSQL (0.3ms)[0m  SHOW KEYS FROM `recipes`
+  [1m[36mSQL (1.0ms)[0m  [1mdescribe `regions`[0m
+  [1m[35mSQL (0.2ms)[0m  SHOW KEYS FROM `regions`
+  [1m[36mSQL (0.9ms)[0m  [1mdescribe `users`[0m
+  [1m[35mSQL (0.3ms)[0m  SHOW KEYS FROM `users`
+  [1m[36mSQL (1.0ms)[0m  [1mdescribe `wines`[0m
+  [1m[35mSQL (0.3ms)[0m  SHOW KEYS FROM `wines`
+  [1m[36mSQL (0.3ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (133.8ms)[0m  CREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB
+  [1m[36mSQL (0.5ms)[0m  [1mSHOW KEYS FROM `schema_migrations`[0m
+  [1m[35mSQL (297.7ms)[0m  CREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)
+  [1m[36mSQL (0.5ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.4ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations`[0m
+Migrating to CreateRecipes (20110510220650)
+  [1m[35mSQL (110.2ms)[0m  CREATE TABLE `recipes` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `dish_id` int(11), `article` text, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20110510220650')[0m
+Migrating to CreateDishes (20110510220858)
+  [1m[35mSQL (139.7ms)[0m  CREATE TABLE `dishes` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(40), `region_id` int(11), `category_id` int(11), `description` varchar(140), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20110510220858')[0m
+Migrating to CreateIngredients (20110510220926)
+  [1m[35mSQL (141.1ms)[0m  CREATE TABLE `ingredients` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36mSQL (0.9ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20110510220926')[0m
+Migrating to CreatePictures (20110510221028)
+  [1m[35mSQL (129.6ms)[0m  CREATE TABLE `pictures` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `caption` varchar(255), `uri` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20110510221028')[0m
+Migrating to CreateUsers (20110510221111)
+  [1m[36mSQL (0.4ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.4ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations`[0m
+Migrating to CreateRecipes (20110510220650)
+Migrating to CreateDishes (20110510220858)
+Migrating to CreateIngredients (20110510220926)
+Migrating to CreatePictures (20110510221028)
+Migrating to CreateUsers (20110510221111)
+  [1m[35mSQL (79.7ms)[0m  CREATE TABLE `users` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(40), `password` varchar(16), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20110510221111')[0m
+Migrating to CreateDishCategories (20110510221709)
+  [1m[35mSQL (150.9ms)[0m  CREATE TABLE `dish_categories` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20110510221709')[0m
+Migrating to CreateComments (20110510221813)
+  [1m[35mSQL (140.5ms)[0m  CREATE TABLE `comments` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `user_id` int(11), `dish_id` int(11), `text` text, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20110510221813')[0m
+Migrating to CreateWines (20110510222021)
+  [1m[35mSQL (129.7ms)[0m  CREATE TABLE `wines` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `region_id` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20110510222021')[0m
+Migrating to CreateBeers (20110510222025)
+  [1m[35mSQL (130.6ms)[0m  CREATE TABLE `beers` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `region_id` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20110510222025')[0m
+Migrating to CreateLikeButtons (20110510222205)
+  [1m[35mSQL (129.3ms)[0m  CREATE TABLE `like_buttons` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `liked_object_id` int(11), `liked_object_class` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20110510222205')[0m
+Migrating to CreatePrivateMenus (20110510222423)
+  [1m[35mSQL (117.6ms)[0m  CREATE TABLE `private_menus` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `user_id` int(11), `name` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20110510222423')[0m
+Migrating to CreateCocktails (20110510222601)
+  [1m[35mSQL (118.3ms)[0m  CREATE TABLE `cocktails` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `region_id` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20110510222601')[0m
+Migrating to CreateCountries (20110511175617)
+  [1m[35mSQL (141.2ms)[0m  CREATE TABLE `countries` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20110511175617')[0m
+Migrating to CreateRegions (20110511175623)
+  [1m[35mSQL (140.6ms)[0m  CREATE TABLE `regions` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `country_id` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20110511175623')[0m
+Migrating to CreateFriendships (20110511203608)
+  [1m[35mSQL (140.2ms)[0m  CREATE TABLE `friendships` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `user_id` int(11), `friend_id` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20110511203608')[0m
+Migrating to CreateRecipesIngredients (20110512204901)
+  [1m[35mSQL (129.8ms)[0m  CREATE TABLE `recipes_ingredients` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `recipe_id` int(11), `ingredient_id` int(11), `amount` int(11), `unit` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20110512204901')[0m
+  [1m[35mSQL (0.8ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations`[0m
+  [1m[35mSQL (0.4ms)[0m  SHOW TABLES
+  [1m[36mSQL (1.4ms)[0m  [1mdescribe `beers`[0m
+  [1m[35mSQL (0.3ms)[0m  SHOW KEYS FROM `beers`
+  [1m[36mSQL (1.0ms)[0m  [1mdescribe `cocktails`[0m
+  [1m[35mSQL (0.2ms)[0m  SHOW KEYS FROM `cocktails`
+  [1m[36mSQL (1.0ms)[0m  [1mdescribe `comments`[0m
+  [1m[35mSQL (1.0ms)[0m  SHOW KEYS FROM `comments`
+  [1m[36mSQL (0.9ms)[0m  [1mdescribe `countries`[0m
+  [1m[35mSQL (0.2ms)[0m  SHOW KEYS FROM `countries`
+  [1m[36mSQL (1.1ms)[0m  [1mdescribe `dish_categories`[0m
+  [1m[35mSQL (0.5ms)[0m  SHOW KEYS FROM `dish_categories`
+  [1m[36mSQL (1.3ms)[0m  [1mdescribe `dishes`[0m
+  [1m[35mSQL (0.2ms)[0m  SHOW KEYS FROM `dishes`
+  [1m[36mSQL (1.1ms)[0m  [1mdescribe `friendships`[0m
+  [1m[35mSQL (0.3ms)[0m  SHOW KEYS FROM `friendships`
+  [1m[36mSQL (0.9ms)[0m  [1mdescribe `ingredients`[0m
+  [1m[35mSQL (0.2ms)[0m  SHOW KEYS FROM `ingredients`
+  [1m[36mSQL (1.0ms)[0m  [1mdescribe `like_buttons`[0m
+  [1m[35mSQL (0.5ms)[0m  SHOW KEYS FROM `like_buttons`
+  [1m[36mSQL (0.8ms)[0m  [1mdescribe `pictures`[0m
+  [1m[35mSQL (0.7ms)[0m  SHOW KEYS FROM `pictures`
+  [1m[36mSQL (0.9ms)[0m  [1mdescribe `private_menus`[0m
+  [1m[35mSQL (0.2ms)[0m  SHOW KEYS FROM `private_menus`
+  [1m[36mSQL (0.9ms)[0m  [1mdescribe `recipes`[0m
+  [1m[35mSQL (0.2ms)[0m  SHOW KEYS FROM `recipes`
+  [1m[36mSQL (1.1ms)[0m  [1mdescribe `recipes_ingredients`[0m
+  [1m[35mSQL (0.3ms)[0m  SHOW KEYS FROM `recipes_ingredients`
+  [1m[36mSQL (1.1ms)[0m  [1mdescribe `regions`[0m
+  [1m[35mSQL (0.2ms)[0m  SHOW KEYS FROM `regions`
+  [1m[36mSQL (0.9ms)[0m  [1mdescribe `users`[0m
+  [1m[35mSQL (0.2ms)[0m  SHOW KEYS FROM `users`
+  [1m[36mSQL (0.9ms)[0m  [1mdescribe `wines`[0m
+  [1m[35mSQL (0.5ms)[0m  SHOW KEYS FROM `wines`
+  [1m[36mSQL (1.1ms)[0m  [1mdescribe `ingredients_recipes`[0m
+Mysql2::Error: Table 'social_kitchen_development.ingredients_recipes' doesn't exist: describe `ingredients_recipes`
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.8ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (1.1ms)[0m  describe `recipes`
+  [1m[36mAREL (0.7ms)[0m  [1mINSERT INTO `recipes` (`article`, `dish_id`, `updated_at`, `created_at`) VALUES (NULL, NULL, '2011-05-12 20:52:42', '2011-05-12 20:52:42')[0m
+  [1m[35mSQL (0.7ms)[0m  COMMIT
+  [1m[36mRecipe Load (0.5ms)[0m  [1mSELECT `recipes`.* FROM `recipes` LIMIT 1[0m
+  [1m[35mSQL (2.2ms)[0m  describe `ingredients_recipes`
+Mysql2::Error: Table 'social_kitchen_development.ingredients_recipes' doesn't exist: describe `ingredients_recipes`
+  [1m[36mSQL (2.1ms)[0m  [1mdescribe `recipes_ingredients`[0m
+  [1m[36mSQL (1.8ms)[0m  [1mdescribe `recipes_ingredients`[0m
+  [1m[36mSQL (2.1ms)[0m  [1mdescribe `recipes_ingredients`[0m
+  [1m[36mRecipe Load (0.2ms)[0m  [1mSELECT `recipes`.* FROM `recipes` LIMIT 1[0m
+  [1m[36mRecipe Load (0.4ms)[0m  [1mSELECT `recipes`.* FROM `recipes` LIMIT 1[0m
+  [1m[36mRecipe Load (0.4ms)[0m  [1mSELECT `recipes`.* FROM `recipes` LIMIT 1[0m
+  [1m[36mRecipe Load (0.4ms)[0m  [1mSELECT `recipes`.* FROM `recipes` LIMIT 1[0m
+  [1m[36mSQL (0.5ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (50.4ms)[0m  CREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB
+  [1m[36mSQL (0.6ms)[0m  [1mSHOW KEYS FROM `schema_migrations`[0m
+  [1m[35mSQL (124.3ms)[0m  CREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)
+  [1m[36mSQL (0.6ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.4ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations`[0m
+Migrating to CreateRecipes (20110510220650)
+  [1m[35mSQL (111.4ms)[0m  CREATE TABLE `recipes` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `dish_id` int(11), `article` text, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20110510220650')[0m
+Migrating to CreateDishes (20110510220858)
+  [1m[35mSQL (128.8ms)[0m  CREATE TABLE `dishes` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(40), `region_id` int(11), `category_id` int(11), `description` varchar(140), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20110510220858')[0m
+Migrating to CreateIngredients (20110510220926)
+  [1m[35mSQL (129.6ms)[0m  CREATE TABLE `ingredients` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20110510220926')[0m
+Migrating to CreatePictures (20110510221028)
+  [1m[35mSQL (140.0ms)[0m  CREATE TABLE `pictures` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `caption` varchar(255), `uri` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20110510221028')[0m
+Migrating to CreateUsers (20110510221111)
+  [1m[35mSQL (129.1ms)[0m  CREATE TABLE `users` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(40), `password` varchar(16), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20110510221111')[0m
+Migrating to CreateDishCategories (20110510221709)
+  [1m[35mSQL (118.4ms)[0m  CREATE TABLE `dish_categories` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36mSQL (0.9ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20110510221709')[0m
+Migrating to CreateComments (20110510221813)
+  [1m[35mSQL (128.3ms)[0m  CREATE TABLE `comments` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `user_id` int(11), `dish_id` int(11), `text` text, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20110510221813')[0m
+Migrating to CreateWines (20110510222021)
+  [1m[35mSQL (108.5ms)[0m  CREATE TABLE `wines` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `region_id` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20110510222021')[0m
+Migrating to CreateBeers (20110510222025)
+  [1m[35mSQL (117.7ms)[0m  CREATE TABLE `beers` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `region_id` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20110510222025')[0m
+Migrating to CreateLikeButtons (20110510222205)
+  [1m[35mSQL (118.7ms)[0m  CREATE TABLE `like_buttons` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `liked_object_id` int(11), `liked_object_class` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20110510222205')[0m
+Migrating to CreatePrivateMenus (20110510222423)
+  [1m[35mSQL (129.0ms)[0m  CREATE TABLE `private_menus` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `user_id` int(11), `name` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20110510222423')[0m
+Migrating to CreateCocktails (20110510222601)
+  [1m[35mSQL (117.7ms)[0m  CREATE TABLE `cocktails` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `region_id` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20110510222601')[0m
+Migrating to CreateCountries (20110511175617)
+  [1m[35mSQL (118.4ms)[0m  CREATE TABLE `countries` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20110511175617')[0m
+Migrating to CreateRegions (20110511175623)
+  [1m[35mSQL (118.2ms)[0m  CREATE TABLE `regions` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `country_id` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20110511175623')[0m
+Migrating to CreateFriendships (20110511203608)
+  [1m[35mSQL (118.0ms)[0m  CREATE TABLE `friendships` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `user_id` int(11), `friend_id` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20110511203608')[0m
+Migrating to CreateRequiredIngredients (20110512211843)
+  [1m[35mSQL (127.4ms)[0m  CREATE TABLE `required_ingredients` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `recipe_id` int(11), `ingredient_id` int(11), `quantity` int(11), `unit` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20110512211843')[0m
+  [1m[35mSQL (0.9ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.4ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations`[0m
+  [1m[35mSQL (0.5ms)[0m  SHOW TABLES
+  [1m[36mSQL (1.1ms)[0m  [1mdescribe `beers`[0m
+  [1m[35mSQL (0.2ms)[0m  SHOW KEYS FROM `beers`
+  [1m[36mSQL (1.0ms)[0m  [1mdescribe `cocktails`[0m
+  [1m[35mSQL (0.2ms)[0m  SHOW KEYS FROM `cocktails`
+  [1m[36mSQL (0.9ms)[0m  [1mdescribe `comments`[0m
+  [1m[35mSQL (0.2ms)[0m  SHOW KEYS FROM `comments`
+  [1m[36mSQL (1.0ms)[0m  [1mdescribe `countries`[0m
+  [1m[35mSQL (0.2ms)[0m  SHOW KEYS FROM `countries`
+  [1m[36mSQL (1.1ms)[0m  [1mdescribe `dish_categories`[0m
+  [1m[35mSQL (0.4ms)[0m  SHOW KEYS FROM `dish_categories`
+  [1m[36mSQL (1.2ms)[0m  [1mdescribe `dishes`[0m
+  [1m[35mSQL (0.2ms)[0m  SHOW KEYS FROM `dishes`
+  [1m[36mSQL (1.1ms)[0m  [1mdescribe `friendships`[0m
+  [1m[35mSQL (0.4ms)[0m  SHOW KEYS FROM `friendships`
+  [1m[36mSQL (0.8ms)[0m  [1mdescribe `ingredients`[0m
+  [1m[35mSQL (0.3ms)[0m  SHOW KEYS FROM `ingredients`
+  [1m[36mSQL (1.0ms)[0m  [1mdescribe `like_buttons`[0m
+  [1m[35mSQL (0.2ms)[0m  SHOW KEYS FROM `like_buttons`
+  [1m[36mSQL (0.8ms)[0m  [1mdescribe `pictures`[0m
+  [1m[35mSQL (0.2ms)[0m  SHOW KEYS FROM `pictures`
+  [1m[36mSQL (1.0ms)[0m  [1mdescribe `private_menus`[0m
+  [1m[35mSQL (0.4ms)[0m  SHOW KEYS FROM `private_menus`
+  [1m[36mSQL (0.9ms)[0m  [1mdescribe `recipes`[0m
+  [1m[35mSQL (0.4ms)[0m  SHOW KEYS FROM `recipes`
+  [1m[36mSQL (1.1ms)[0m  [1mdescribe `regions`[0m
+  [1m[35mSQL (0.5ms)[0m  SHOW KEYS FROM `regions`
+  [1m[36mSQL (1.1ms)[0m  [1mdescribe `required_ingredients`[0m
+  [1m[35mSQL (0.2ms)[0m  SHOW KEYS FROM `required_ingredients`
+  [1m[36mSQL (0.9ms)[0m  [1mdescribe `users`[0m
+  [1m[35mSQL (0.3ms)[0m  SHOW KEYS FROM `users`
+  [1m[36mSQL (1.0ms)[0m  [1mdescribe `wines`[0m
+  [1m[35mSQL (0.2ms)[0m  SHOW KEYS FROM `wines`
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  SHOW TABLES
+  [1m[36mSQL (1.5ms)[0m  [1mdescribe `recipes`[0m
+  [1m[35mAREL (0.4ms)[0m  INSERT INTO `recipes` (`dish_id`, `created_at`, `updated_at`, `article`) VALUES (NULL, '2011-05-12 21:22:06', '2011-05-12 21:22:06', NULL)
+  [1m[36mSQL (0.9ms)[0m  [1mCOMMIT[0m
+  [1m[36mRecipe Load (0.4ms)[0m  [1mSELECT `recipes`.* FROM `recipes` LIMIT 1[0m
+  [1m[35mIngredient Load (1.1ms)[0m  SELECT `ingredients`.* FROM `ingredients` INNER JOIN `required_ingredients` ON `ingredients`.id = `required_ingredients`.ingredient_id WHERE ((`required_ingredients`.recipe_id = 1))
+  [1m[36mSQL (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  SHOW TABLES
+  [1m[36mSQL (1.6ms)[0m  [1mdescribe `ingredients`[0m
+  [1m[35mAREL (0.3ms)[0m  INSERT INTO `ingredients` (`created_at`, `updated_at`, `name`) VALUES ('2011-05-12 21:23:22', '2011-05-12 21:23:22', NULL)
+  [1m[36mSQL (0.9ms)[0m  [1mdescribe `required_ingredients`[0m
+  [1m[35mAREL (0.2ms)[0m  INSERT INTO `required_ingredients` (`recipe_id`, `updated_at`, `created_at`, `ingredient_id`, `unit`, `quantity`) VALUES (1, '2011-05-12 21:23:22', '2011-05-12 21:23:22', 1, NULL, NULL)
+  [1m[36mSQL (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35mIngredient Load (0.4ms)[0m  SELECT `ingredients`.* FROM `ingredients` LIMIT 1
+  [1m[36mRecipe Load (0.7ms)[0m  [1mSELECT `recipes`.* FROM `recipes` INNER JOIN `required_ingredients` ON `recipes`.id = `required_ingredients`.recipe_id WHERE ((`required_ingredients`.ingredient_id = 1))[0m
+  [1m[35mSQL (0.3ms)[0m  BEGIN
+  [1m[36mSQL (1.1ms)[0m  [1mdescribe `dishes`[0m
+  [1m[35mAREL (0.2ms)[0m  INSERT INTO `dishes` (`category_id`, `region_id`, `name`, `description`, `updated_at`, `created_at`) VALUES (NULL, NULL, NULL, NULL, '2011-05-12 21:27:32', '2011-05-12 21:27:32')
+  [1m[36mSQL (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[36mDish Load (0.5ms)[0m  [1mSELECT `dishes`.* FROM `dishes` LIMIT 1[0m
+  [1m[35mRecipe Load (0.6ms)[0m  SELECT `recipes`.* FROM `recipes` WHERE (`recipes`.dish_id = 1) LIMIT 1
+  [1m[36mRecipe Load (0.5ms)[0m  [1mSELECT `recipes`.* FROM `recipes` LIMIT 1[0m
+  [1m[35mRecipe Load (0.4ms)[0m  SELECT `recipes`.* FROM `recipes` WHERE (`recipes`.dish_id = 1) LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  SHOW TABLES
+  [1m[36mAREL (0.8ms)[0m  [1mUPDATE `recipes` SET `dish_id` = 1, `updated_at` = '2011-05-12 21:28:19' WHERE `recipes`.`id` = 1[0m
+  [1m[35mSQL (0.7ms)[0m  COMMIT
+  [1m[36mSQL (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  COMMIT
+  [1m[36mRecipe Load (0.4ms)[0m  [1mSELECT `recipes`.* FROM `recipes` LIMIT 1[0m
+  [1m[35mIngredient Load (0.6ms)[0m  SELECT `ingredients`.* FROM `ingredients` INNER JOIN `required_ingredients` ON `ingredients`.id = `required_ingredients`.ingredient_id WHERE ((`required_ingredients`.recipe_id = 1))
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  SHOW TABLES
+  [1m[36mSQL (1.3ms)[0m  [1mdescribe `private_menus`[0m
+  [1m[35mAREL (0.4ms)[0m  INSERT INTO `private_menus` (`name`, `updated_at`, `user_id`, `created_at`) VALUES (NULL, '2011-05-12 21:38:11', NULL, '2011-05-12 21:38:11')
+  [1m[36mSQL (0.7ms)[0m  [1mCOMMIT[0m
+  [1m[35mDish Load (0.5ms)[0m  SELECT `dishes`.* FROM `dishes` WHERE (`dishes`.private_menu_id = 1)
+Mysql2::Error: Unknown column 'dishes.private_menu_id' in 'where clause': SELECT `dishes`.* FROM `dishes` WHERE (`dishes`.private_menu_id = 1)
+  [1m[36mDish Load (0.4ms)[0m  [1mSELECT `dishes`.* FROM `dishes` LIMIT 1[0m
+  [1m[35mPrivateMenu Load (0.4ms)[0m  SELECT `private_menus`.* FROM `private_menus` LIMIT 1
+  [1m[36mDish Load (0.7ms)[0m  [1mSELECT `dishes`.* FROM `dishes` INNER JOIN `menu_entries` ON `dishes`.id = `menu_entries`.dish_id WHERE ((`menu_entries`.private_menu_id = 1))[0m
+Mysql2::Error: Table 'social_kitchen_development.menu_entries' doesn't exist: SELECT `dishes`.* FROM `dishes` INNER JOIN `menu_entries` ON `dishes`.id = `menu_entries`.dish_id WHERE ((`menu_entries`.private_menu_id = 1))
+  [1m[36mSQL (0.8ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.6ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.5ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations`[0m
+Migrating to CreateRecipes (20110510220650)
+Migrating to CreateDishes (20110510220858)
+Migrating to CreateIngredients (20110510220926)
+Migrating to CreatePictures (20110510221028)
+Migrating to CreateUsers (20110510221111)
+Migrating to CreateDishCategories (20110510221709)
+Migrating to CreateComments (20110510221813)
+Migrating to CreateWines (20110510222021)
+Migrating to CreateBeers (20110510222025)
+Migrating to CreateLikeButtons (20110510222205)
+Migrating to CreatePrivateMenus (20110510222423)
+Migrating to CreateCocktails (20110510222601)
+Migrating to CreateCountries (20110511175617)
+Migrating to CreateRegions (20110511175623)
+Migrating to CreateFriendships (20110511203608)
+Migrating to CreateRequiredIngredients (20110512211843)
+Migrating to CreateMenuEntries (20110512213852)
+  [1m[35mSQL (71.3ms)[0m  CREATE TABLE `menu_entries` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `dish_id` int(11), `private_menu_id` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20110512213852')[0m
+  [1m[35mSQL (0.8ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations`[0m
+  [1m[35mSQL (0.5ms)[0m  SHOW TABLES
+  [1m[36mSQL (1.2ms)[0m  [1mdescribe `beers`[0m
+  [1m[35mSQL (0.3ms)[0m  SHOW KEYS FROM `beers`
+  [1m[36mSQL (1.4ms)[0m  [1mdescribe `cocktails`[0m
+  [1m[35mSQL (0.5ms)[0m  SHOW KEYS FROM `cocktails`
+  [1m[36mSQL (1.7ms)[0m  [1mdescribe `comments`[0m
+  [1m[35mSQL (0.4ms)[0m  SHOW KEYS FROM `comments`
+  [1m[36mSQL (1.0ms)[0m  [1mdescribe `countries`[0m
+  [1m[35mSQL (0.6ms)[0m  SHOW KEYS FROM `countries`
+  [1m[36mSQL (1.0ms)[0m  [1mdescribe `dish_categories`[0m
+  [1m[35mSQL (0.3ms)[0m  SHOW KEYS FROM `dish_categories`
+  [1m[36mSQL (1.2ms)[0m  [1mdescribe `dishes`[0m
+  [1m[35mSQL (0.2ms)[0m  SHOW KEYS FROM `dishes`
+  [1m[36mSQL (1.0ms)[0m  [1mdescribe `friendships`[0m
+  [1m[35mSQL (0.3ms)[0m  SHOW KEYS FROM `friendships`
+  [1m[36mSQL (0.9ms)[0m  [1mdescribe `ingredients`[0m
+  [1m[35mSQL (0.3ms)[0m  SHOW KEYS FROM `ingredients`
+  [1m[36mSQL (0.9ms)[0m  [1mdescribe `like_buttons`[0m
+  [1m[35mSQL (0.7ms)[0m  SHOW KEYS FROM `like_buttons`
+  [1m[36mSQL (0.9ms)[0m  [1mdescribe `menu_entries`[0m
+  [1m[35mSQL (0.3ms)[0m  SHOW KEYS FROM `menu_entries`
+  [1m[36mSQL (0.9ms)[0m  [1mdescribe `pictures`[0m
+  [1m[35mSQL (0.4ms)[0m  SHOW KEYS FROM `pictures`
+  [1m[36mSQL (1.2ms)[0m  [1mdescribe `private_menus`[0m
+  [1m[35mSQL (0.3ms)[0m  SHOW KEYS FROM `private_menus`
+  [1m[36mSQL (1.2ms)[0m  [1mdescribe `recipes`[0m
+  [1m[35mSQL (0.3ms)[0m  SHOW KEYS FROM `recipes`
+  [1m[36mSQL (1.0ms)[0m  [1mdescribe `regions`[0m
+  [1m[35mSQL (0.3ms)[0m  SHOW KEYS FROM `regions`
+  [1m[36mSQL (1.2ms)[0m  [1mdescribe `required_ingredients`[0m
+  [1m[35mSQL (0.3ms)[0m  SHOW KEYS FROM `required_ingredients`
+  [1m[36mSQL (0.9ms)[0m  [1mdescribe `users`[0m
+  [1m[35mSQL (0.2ms)[0m  SHOW KEYS FROM `users`
+  [1m[36mSQL (0.8ms)[0m  [1mdescribe `wines`[0m
+  [1m[35mSQL (0.2ms)[0m  SHOW KEYS FROM `wines`
+  [1m[36mPrivateMenu Load (0.3ms)[0m  [1mSELECT `private_menus`.* FROM `private_menus` LIMIT 1[0m
+  [1m[35mDish Load (0.5ms)[0m  SELECT `dishes`.* FROM `dishes` INNER JOIN `menu_entries` ON `dishes`.id = `menu_entries`.dish_id WHERE ((`menu_entries`.private_menu_id = 1))
+  [1m[36mDish Load (0.4ms)[0m  [1mSELECT `dishes`.* FROM `dishes` LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.8ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (97.1ms)[0m  describe `menu_entries`
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO `menu_entries` (`updated_at`, `created_at`, `dish_id`, `private_menu_id`) VALUES ('2011-05-12 21:47:38', '2011-05-12 21:47:38', 1, 1)[0m
+  [1m[35mSQL (30.5ms)[0m  COMMIT
+  [1m[36mPrivateMenu Load (0.7ms)[0m  [1mSELECT `private_menus`.* FROM `private_menus` WHERE `private_menus`.`id` = 1 LIMIT 1[0m
+  [1m[35mDish Load (0.4ms)[0m  SELECT `dishes`.* FROM `dishes` INNER JOIN `menu_entries` ON `dishes`.id = `menu_entries`.dish_id WHERE ((`menu_entries`.private_menu_id = 1))
+  [1m[36mSQL (1.0ms)[0m  [1mSHOW TABLES[0m
+  [1m[36mSQL (0.7ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.5ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations`[0m
+Migrating to CreateRecipes (20110510220650)
+Migrating to CreateDishes (20110510220858)
+Migrating to CreateIngredients (20110510220926)
+Migrating to CreatePictures (20110510221028)
+Migrating to CreateUsers (20110510221111)
+Migrating to CreateDishCategories (20110510221709)
+Migrating to CreateComments (20110510221813)
+Migrating to CreateWines (20110510222021)
+Migrating to CreateBeers (20110510222025)
+Migrating to CreateLikeButtons (20110510222205)
+Migrating to CreatePrivateMenus (20110510222423)
+Migrating to CreateCocktails (20110510222601)
+Migrating to CreateCountries (20110511175617)
+Migrating to CreateRegions (20110511175623)
+Migrating to CreateFriendships (20110511203608)
+Migrating to CreateRequiredIngredients (20110512211843)
+Migrating to CreateMenuEntries (20110512213852)
+Migrating to CreatePlacedPictures (20110512220553)
+  [1m[35mSQL (95.2ms)[0m  CREATE TABLE `placed_pictures` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `picture_id` int(11), `place_id` int(11), `place_type` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20110512220553')[0m
+  [1m[35mSQL (0.6ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations`[0m
+  [1m[35mSQL (0.5ms)[0m  SHOW TABLES
+  [1m[36mSQL (1.6ms)[0m  [1mdescribe `beers`[0m
+  [1m[35mSQL (0.3ms)[0m  SHOW KEYS FROM `beers`
+  [1m[36mSQL (1.2ms)[0m  [1mdescribe `cocktails`[0m
+  [1m[35mSQL (0.4ms)[0m  SHOW KEYS FROM `cocktails`
+  [1m[36mSQL (1.2ms)[0m  [1mdescribe `comments`[0m
+  [1m[35mSQL (0.6ms)[0m  SHOW KEYS FROM `comments`
+  [1m[36mSQL (1.2ms)[0m  [1mdescribe `countries`[0m
+  [1m[35mSQL (0.4ms)[0m  SHOW KEYS FROM `countries`
+  [1m[36mSQL (1.2ms)[0m  [1mdescribe `dish_categories`[0m
+  [1m[35mSQL (0.4ms)[0m  SHOW KEYS FROM `dish_categories`
+  [1m[36mSQL (1.2ms)[0m  [1mdescribe `dishes`[0m
+  [1m[35mSQL (0.5ms)[0m  SHOW KEYS FROM `dishes`
+  [1m[36mSQL (1.6ms)[0m  [1mdescribe `friendships`[0m
+  [1m[35mSQL (0.5ms)[0m  SHOW KEYS FROM `friendships`
+  [1m[36mSQL (1.6ms)[0m  [1mdescribe `ingredients`[0m
+  [1m[35mSQL (0.4ms)[0m  SHOW KEYS FROM `ingredients`
+  [1m[36mSQL (1.6ms)[0m  [1mdescribe `like_buttons`[0m
+  [1m[35mSQL (0.3ms)[0m  SHOW KEYS FROM `like_buttons`
+  [1m[36mSQL (1.2ms)[0m  [1mdescribe `menu_entries`[0m
+  [1m[35mSQL (0.8ms)[0m  SHOW KEYS FROM `menu_entries`
+  [1m[36mSQL (1.2ms)[0m  [1mdescribe `pictures`[0m
+  [1m[35mSQL (0.5ms)[0m  SHOW KEYS FROM `pictures`
+  [1m[36mSQL (1.2ms)[0m  [1mdescribe `placed_pictures`[0m
+  [1m[35mSQL (0.5ms)[0m  SHOW KEYS FROM `placed_pictures`
+  [1m[36mSQL (1.2ms)[0m  [1mdescribe `private_menus`[0m
+  [1m[35mSQL (0.8ms)[0m  SHOW KEYS FROM `private_menus`
+  [1m[36mSQL (1.2ms)[0m  [1mdescribe `recipes`[0m
+  [1m[35mSQL (0.4ms)[0m  SHOW KEYS FROM `recipes`
+  [1m[36mSQL (1.1ms)[0m  [1mdescribe `regions`[0m
+  [1m[35mSQL (0.5ms)[0m  SHOW KEYS FROM `regions`
+  [1m[36mSQL (1.2ms)[0m  [1mdescribe `required_ingredients`[0m
+  [1m[35mSQL (0.5ms)[0m  SHOW KEYS FROM `required_ingredients`
+  [1m[36mSQL (1.7ms)[0m  [1mdescribe `users`[0m
+  [1m[35mSQL (0.3ms)[0m  SHOW KEYS FROM `users`
+  [1m[36mSQL (1.1ms)[0m  [1mdescribe `wines`[0m
+  [1m[35mSQL (0.3ms)[0m  SHOW KEYS FROM `wines`
+  [1m[36mSQL (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (1.6ms)[0m  SHOW TABLES
+  [1m[36mSQL (1.5ms)[0m  [1mdescribe `placed_pictures`[0m
+  [1m[35mAREL (0.4ms)[0m  INSERT INTO `placed_pictures` (`picture_id`, `place_id`, `updated_at`, `place_type`, `created_at`) VALUES (NULL, NULL, '2011-05-12 22:20:30', 0, '2011-05-12 22:20:30')
+  [1m[36mSQL (0.7ms)[0m  [1mCOMMIT[0m
+  [1m[35mPlacedPicture Load (0.5ms)[0m  SELECT `placed_pictures`.* FROM `placed_pictures`
+  [1m[36mSQL (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mAREL (0.5ms)[0m  INSERT INTO `placed_pictures` (`picture_id`, `place_id`, `updated_at`, `place_type`, `created_at`) VALUES (NULL, NULL, '2011-05-12 22:22:29', 0, '2011-05-12 22:22:29')
+  [1m[36mSQL (1.3ms)[0m  [1mCOMMIT[0m
+  [1m[36mSQL (0.3ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (60.8ms)[0m  CREATE TABLE `beers` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `region_id` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36mSQL (0.5ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (224.3ms)[0m  CREATE TABLE `cocktails` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `region_id` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36mSQL (0.5ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (121.3ms)[0m  CREATE TABLE `comments` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `user_id` int(11), `dish_id` int(11), `text` text, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36mSQL (0.4ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (110.0ms)[0m  CREATE TABLE `countries` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36mSQL (0.5ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (98.7ms)[0m  CREATE TABLE `dish_categories` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36mSQL (0.6ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (99.1ms)[0m  CREATE TABLE `dishes` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(40), `region_id` int(11), `category_id` int(11), `description` varchar(140), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36mSQL (0.7ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (100.5ms)[0m  CREATE TABLE `friendships` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `user_id` int(11), `friend_id` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36mSQL (0.7ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (109.4ms)[0m  CREATE TABLE `ingredients` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36mSQL (0.7ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (109.9ms)[0m  CREATE TABLE `like_buttons` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `liked_object_id` int(11), `liked_object_class` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36mSQL (0.7ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (110.0ms)[0m  CREATE TABLE `menu_entries` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `dish_id` int(11), `private_menu_id` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36mSQL (0.9ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (109.2ms)[0m  CREATE TABLE `pictures` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `caption` varchar(255), `uri` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36mSQL (0.7ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (110.3ms)[0m  CREATE TABLE `placed_pictures` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `picture_id` int(11), `place_id` int(11), `place_type` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36mSQL (0.7ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (121.1ms)[0m  CREATE TABLE `private_menus` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `user_id` int(11), `name` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36mSQL (0.9ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (109.4ms)[0m  CREATE TABLE `recipes` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `dish_id` int(11), `article` text, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36mSQL (0.8ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (109.9ms)[0m  CREATE TABLE `regions` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `country_id` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36mSQL (0.9ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (87.0ms)[0m  CREATE TABLE `required_ingredients` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `recipe_id` int(11), `ingredient_id` int(11), `quantity` int(11), `unit` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36mSQL (1.0ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (109.1ms)[0m  CREATE TABLE `users` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(40), `password` varchar(16), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36mSQL (0.7ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (121.3ms)[0m  CREATE TABLE `wines` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `region_id` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36mSQL (0.9ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (121.3ms)[0m  CREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB
+  [1m[36mSQL (0.6ms)[0m  [1mSHOW KEYS FROM `schema_migrations`[0m
+  [1m[35mSQL (126.2ms)[0m  CREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)
+  [1m[36mSQL (0.9ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.4ms)[0m  SELECT version FROM `schema_migrations`
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20110512220553')[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20110510220650')
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20110510220858')[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20110510220926')
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20110510221028')[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20110510221111')
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20110510221709')[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20110510221813')
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20110510222021')[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20110510222025')
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20110510222205')[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20110510222423')
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20110510222601')[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20110511175617')
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20110511175623')[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20110511203608')
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20110512211843')[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20110512213852')
+  [1m[36mSQL (1.0ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.6ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations`[0m
+  [1m[36mSQL (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  SHOW TABLES
+  [1m[36mSQL (1.3ms)[0m  [1mdescribe `placed_pictures`[0m
+  [1m[35mAREL (0.4ms)[0m  INSERT INTO `placed_pictures` (`place_type`, `created_at`, `picture_id`, `place_id`, `updated_at`) VALUES (0, '2011-05-12 22:23:24', NULL, NULL, '2011-05-12 22:23:24')
+  [1m[36mSQL (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[36mSQL (1.1ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.8ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations`[0m
+  [1m[35mSQL (0.5ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations`[0m
+Migrating to CreatePlacedPictures (20110512220553)
+  [1m[35mSQL (1.1ms)[0m  DROP TABLE `placed_pictures`
+  [1m[36mAREL (0.8ms)[0m  [1mDELETE FROM `schema_migrations` WHERE `schema_migrations`.`version` = '20110512220553'[0m
+  [1m[35mSQL (0.7ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations`[0m
+  [1m[35mSQL (0.8ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.9ms)[0m  [1mdescribe `beers`[0m
+  [1m[35mSQL (0.2ms)[0m  SHOW KEYS FROM `beers`
+  [1m[36mSQL (1.1ms)[0m  [1mdescribe `cocktails`[0m
+  [1m[35mSQL (0.4ms)[0m  SHOW KEYS FROM `cocktails`
+  [1m[36mSQL (0.8ms)[0m  [1mdescribe `comments`[0m
+  [1m[35mSQL (0.2ms)[0m  SHOW KEYS FROM `comments`
+  [1m[36mSQL (0.9ms)[0m  [1mdescribe `countries`[0m
+  [1m[35mSQL (0.2ms)[0m  SHOW KEYS FROM `countries`
+  [1m[36mSQL (1.0ms)[0m  [1mdescribe `dish_categories`[0m
+  [1m[35mSQL (0.5ms)[0m  SHOW KEYS FROM `dish_categories`
+  [1m[36mSQL (1.2ms)[0m  [1mdescribe `dishes`[0m
+  [1m[35mSQL (0.2ms)[0m  SHOW KEYS FROM `dishes`
+  [1m[36mSQL (0.8ms)[0m  [1mdescribe `friendships`[0m
+  [1m[35mSQL (0.2ms)[0m  SHOW KEYS FROM `friendships`
+  [1m[36mSQL (0.9ms)[0m  [1mdescribe `ingredients`[0m
+  [1m[35mSQL (0.3ms)[0m  SHOW KEYS FROM `ingredients`
+  [1m[36mSQL (1.0ms)[0m  [1mdescribe `like_buttons`[0m
+  [1m[35mSQL (0.4ms)[0m  SHOW KEYS FROM `like_buttons`
+  [1m[36mSQL (1.1ms)[0m  [1mdescribe `menu_entries`[0m
+  [1m[35mSQL (0.3ms)[0m  SHOW KEYS FROM `menu_entries`
+  [1m[36mSQL (0.7ms)[0m  [1mdescribe `pictures`[0m
+  [1m[35mSQL (0.3ms)[0m  SHOW KEYS FROM `pictures`
+  [1m[36mSQL (0.9ms)[0m  [1mdescribe `private_menus`[0m
+  [1m[35mSQL (0.2ms)[0m  SHOW KEYS FROM `private_menus`
+  [1m[36mSQL (1.1ms)[0m  [1mdescribe `recipes`[0m
+  [1m[35mSQL (0.3ms)[0m  SHOW KEYS FROM `recipes`
+  [1m[36mSQL (1.1ms)[0m  [1mdescribe `regions`[0m
+  [1m[35mSQL (0.4ms)[0m  SHOW KEYS FROM `regions`
+  [1m[36mSQL (1.1ms)[0m  [1mdescribe `required_ingredients`[0m
+  [1m[35mSQL (0.4ms)[0m  SHOW KEYS FROM `required_ingredients`
+  [1m[36mSQL (0.9ms)[0m  [1mdescribe `users`[0m
+  [1m[35mSQL (0.3ms)[0m  SHOW KEYS FROM `users`
+  [1m[36mSQL (1.1ms)[0m  [1mdescribe `wines`[0m
+  [1m[35mSQL (0.2ms)[0m  SHOW KEYS FROM `wines`
+  [1m[36mSQL (0.7ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.6ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations`[0m
+Migrating to CreateRecipes (20110510220650)
+Migrating to CreateDishes (20110510220858)
+Migrating to CreateIngredients (20110510220926)
+Migrating to CreatePictures (20110510221028)
+Migrating to CreateUsers (20110510221111)
+Migrating to CreateDishCategories (20110510221709)
+Migrating to CreateComments (20110510221813)
+Migrating to CreateWines (20110510222021)
+Migrating to CreateBeers (20110510222025)
+Migrating to CreateLikeButtons (20110510222205)
+Migrating to CreatePrivateMenus (20110510222423)
+Migrating to CreateCocktails (20110510222601)
+Migrating to CreateCountries (20110511175617)
+Migrating to CreateRegions (20110511175623)
+Migrating to CreateFriendships (20110511203608)
+Migrating to CreateRequiredIngredients (20110512211843)
+Migrating to CreateMenuEntries (20110512213852)
+Migrating to CreatePlacedPictures (20110512220553)
+  [1m[35mSQL (74.2ms)[0m  CREATE TABLE `placed_pictures` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `picture_id` int(11), `place_id` int(11), `place_type` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20110512220553')[0m
+  [1m[35mSQL (0.9ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.9ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations`[0m
+  [1m[35mSQL (0.9ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.8ms)[0m  [1mdescribe `beers`[0m
+  [1m[35mSQL (0.2ms)[0m  SHOW KEYS FROM `beers`
+  [1m[36mSQL (1.4ms)[0m  [1mdescribe `cocktails`[0m
+  [1m[35mSQL (0.3ms)[0m  SHOW KEYS FROM `cocktails`
+  [1m[36mSQL (1.2ms)[0m  [1mdescribe `comments`[0m
+  [1m[35mSQL (0.3ms)[0m  SHOW KEYS FROM `comments`
+  [1m[36mSQL (1.1ms)[0m  [1mdescribe `countries`[0m
+  [1m[35mSQL (0.4ms)[0m  SHOW KEYS FROM `countries`
+  [1m[36mSQL (0.8ms)[0m  [1mdescribe `dish_categories`[0m
+  [1m[35mSQL (0.2ms)[0m  SHOW KEYS FROM `dish_categories`
+  [1m[36mSQL (1.1ms)[0m  [1mdescribe `dishes`[0m
+  [1m[35mSQL (0.6ms)[0m  SHOW KEYS FROM `dishes`
+  [1m[36mSQL (1.0ms)[0m  [1mdescribe `friendships`[0m
+  [1m[35mSQL (0.3ms)[0m  SHOW KEYS FROM `friendships`
+  [1m[36mSQL (1.5ms)[0m  [1mdescribe `ingredients`[0m
+  [1m[35mSQL (0.3ms)[0m  SHOW KEYS FROM `ingredients`
+  [1m[36mSQL (1.0ms)[0m  [1mdescribe `like_buttons`[0m
+  [1m[35mSQL (0.3ms)[0m  SHOW KEYS FROM `like_buttons`
+  [1m[36mSQL (1.2ms)[0m  [1mdescribe `menu_entries`[0m
+  [1m[35mSQL (0.3ms)[0m  SHOW KEYS FROM `menu_entries`
+  [1m[36mSQL (1.0ms)[0m  [1mdescribe `pictures`[0m
+  [1m[35mSQL (0.3ms)[0m  SHOW KEYS FROM `pictures`
+  [1m[36mSQL (1.0ms)[0m  [1mdescribe `placed_pictures`[0m
+  [1m[35mSQL (0.4ms)[0m  SHOW KEYS FROM `placed_pictures`
+  [1m[36mSQL (0.7ms)[0m  [1mdescribe `private_menus`[0m
+  [1m[35mSQL (0.4ms)[0m  SHOW KEYS FROM `private_menus`
+  [1m[36mSQL (0.9ms)[0m  [1mdescribe `recipes`[0m
+  [1m[35mSQL (0.5ms)[0m  SHOW KEYS FROM `recipes`
+  [1m[36mSQL (1.0ms)[0m  [1mdescribe `regions`[0m
+  [1m[35mSQL (0.3ms)[0m  SHOW KEYS FROM `regions`
+  [1m[36mSQL (1.2ms)[0m  [1mdescribe `required_ingredients`[0m
+  [1m[35mSQL (0.5ms)[0m  SHOW KEYS FROM `required_ingredients`
+  [1m[36mSQL (0.9ms)[0m  [1mdescribe `users`[0m
+  [1m[35mSQL (0.2ms)[0m  SHOW KEYS FROM `users`
+  [1m[36mSQL (0.9ms)[0m  [1mdescribe `wines`[0m
+  [1m[35mSQL (0.2ms)[0m  SHOW KEYS FROM `wines`
+  [1m[36mSQL (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.9ms)[0m  SHOW TABLES
+  [1m[36mSQL (1.5ms)[0m  [1mdescribe `placed_pictures`[0m
+  [1m[35mAREL (0.5ms)[0m  INSERT INTO `placed_pictures` (`created_at`, `place_type`, `picture_id`, `place_id`, `updated_at`) VALUES ('2011-05-12 22:23:56', 'MenuPicture', NULL, NULL, '2011-05-12 22:23:56')
+  [1m[36mSQL (0.8ms)[0m  [1mCOMMIT[0m
+  [1m[35mPlacedPicture Load (0.4ms)[0m  SELECT `placed_pictures`.* FROM `placed_pictures` LIMIT 1

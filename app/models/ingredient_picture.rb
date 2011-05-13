@@ -1,0 +1,2 @@
+class IngredientPicture < PlacedPicture
+end
