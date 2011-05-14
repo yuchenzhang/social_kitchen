@@ -1,0 +1,2 @@
+class PrivateMenusController < ApplicationController
+end

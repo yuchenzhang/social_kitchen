@@ -25,6 +25,8 @@ SocialKitchen::Application.routes.draw do
   #     end
   #   end
 
+  resources :recipes do
+  end
   # Sample resource route with sub-resources:
   #   resources :products do
   #     resources :comments, :sales
