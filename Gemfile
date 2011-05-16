@@ -29,3 +29,5 @@ gem 'mysql2'
 # group :development, :test do
 #   gem 'webrat'
 # end
+
+gem "paperclip", "~> 2.3"

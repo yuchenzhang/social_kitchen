@@ -1002,3 +1002,832 @@ Started GET "/recipes/1" for 127.0.0.1 at Sat May 14 08:33:58 +0200 2011
   [1m[36mDish Load (0.4ms)[0m  [1mSELECT `dishes`.* FROM `dishes` WHERE `dishes`.`id` = 1 LIMIT 1[0m
 Rendered recipes/show.html.erb within layouts/application (14.3ms)
 Completed 200 OK in 92ms (Views: 18.5ms | ActiveRecord: 0.7ms)
+  [1m[36mSQL (62.4ms)[0m  [1mSHOW TABLES[0m
+  [1m[36mSQL (0.8ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.7ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations`[0m
+Migrating to CreateRecipes (20110510220650)
+Migrating to CreateDishes (20110510220858)
+Migrating to CreateIngredients (20110510220926)
+Migrating to CreatePictures (20110510221028)
+Migrating to CreateUsers (20110510221111)
+Migrating to CreateDishCategories (20110510221709)
+Migrating to CreateComments (20110510221813)
+Migrating to CreateWines (20110510222021)
+Migrating to CreateBeers (20110510222025)
+Migrating to CreateLikeButtons (20110510222205)
+Migrating to CreatePrivateMenus (20110510222423)
+Migrating to CreateCocktails (20110510222601)
+Migrating to CreateCountries (20110511175617)
+Migrating to CreateRegions (20110511175623)
+Migrating to CreateFriendships (20110511203608)
+Migrating to CreateRequiredIngredients (20110512211843)
+Migrating to CreateMenuEntries (20110512213852)
+Migrating to CreatePlacedPictures (20110512220553)
+Migrating to AddPaperClipToPicture (20110514202403)
+  [1m[35mSQL (137.5ms)[0m  ALTER TABLE `pictures` ADD `image_file_name` varchar(255)
+  [1m[36mSQL (272.4ms)[0m  [1mALTER TABLE `pictures` ADD `image_content_type` varchar(255)[0m
+  [1m[35mSQL (110.9ms)[0m  ALTER TABLE `pictures` ADD `image_file_size` int(11)
+  [1m[36mSQL (111.0ms)[0m  [1mALTER TABLE `pictures` ADD `image_updated_at` datetime[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20110514202403')
+  [1m[36mSQL (0.8ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT `schema_migrations`.`version` FROM `schema_migrations`
+  [1m[36mSQL (0.5ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (1.3ms)[0m  describe `beers`
+  [1m[36mSQL (0.7ms)[0m  [1mSHOW KEYS FROM `beers`[0m
+  [1m[35mSQL (1.2ms)[0m  describe `cocktails`
+  [1m[36mSQL (0.3ms)[0m  [1mSHOW KEYS FROM `cocktails`[0m
+  [1m[35mSQL (0.8ms)[0m  describe `comments`
+  [1m[36mSQL (0.2ms)[0m  [1mSHOW KEYS FROM `comments`[0m
+  [1m[35mSQL (0.9ms)[0m  describe `countries`
+  [1m[36mSQL (0.3ms)[0m  [1mSHOW KEYS FROM `countries`[0m
+  [1m[35mSQL (1.0ms)[0m  describe `dish_categories`
+  [1m[36mSQL (0.2ms)[0m  [1mSHOW KEYS FROM `dish_categories`[0m
+  [1m[35mSQL (1.1ms)[0m  describe `dishes`
+  [1m[36mSQL (0.3ms)[0m  [1mSHOW KEYS FROM `dishes`[0m
+  [1m[35mSQL (0.9ms)[0m  describe `friendships`
+  [1m[36mSQL (0.3ms)[0m  [1mSHOW KEYS FROM `friendships`[0m
+  [1m[35mSQL (0.9ms)[0m  describe `ingredients`
+  [1m[36mSQL (0.5ms)[0m  [1mSHOW KEYS FROM `ingredients`[0m
+  [1m[35mSQL (1.3ms)[0m  describe `like_buttons`
+  [1m[36mSQL (0.4ms)[0m  [1mSHOW KEYS FROM `like_buttons`[0m
+  [1m[35mSQL (1.1ms)[0m  describe `menu_entries`
+  [1m[36mSQL (0.4ms)[0m  [1mSHOW KEYS FROM `menu_entries`[0m
+  [1m[35mSQL (1.0ms)[0m  describe `pictures`
+  [1m[36mSQL (0.3ms)[0m  [1mSHOW KEYS FROM `pictures`[0m
+  [1m[35mSQL (1.0ms)[0m  describe `placed_pictures`
+  [1m[36mSQL (0.3ms)[0m  [1mSHOW KEYS FROM `placed_pictures`[0m
+  [1m[35mSQL (1.0ms)[0m  describe `private_menus`
+  [1m[36mSQL (0.2ms)[0m  [1mSHOW KEYS FROM `private_menus`[0m
+  [1m[35mSQL (1.0ms)[0m  describe `recipes`
+  [1m[36mSQL (0.3ms)[0m  [1mSHOW KEYS FROM `recipes`[0m
+  [1m[35mSQL (1.1ms)[0m  describe `regions`
+  [1m[36mSQL (0.2ms)[0m  [1mSHOW KEYS FROM `regions`[0m
+  [1m[35mSQL (1.0ms)[0m  describe `required_ingredients`
+  [1m[36mSQL (0.2ms)[0m  [1mSHOW KEYS FROM `required_ingredients`[0m
+  [1m[35mSQL (1.3ms)[0m  describe `users`
+  [1m[36mSQL (0.3ms)[0m  [1mSHOW KEYS FROM `users`[0m
+  [1m[35mSQL (1.0ms)[0m  describe `wines`
+  [1m[36mSQL (0.2ms)[0m  [1mSHOW KEYS FROM `wines`[0m
+  [1m[35mSQL (0.8ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.8ms)[0m  [1mSHOW TABLES[0m
+
+
+Started GET "/pictures/new" for 127.0.0.1 at Sat May 14 22:35:12 +0200 2011
+
+ActionController::RoutingError (No route matches "/pictures/new"):
+  
+
+Rendered /Users/yuchenzhang/.rvm/gems/ruby-1.8.7-p302/gems/actionpack-3.0.6/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (21.2ms)
+
+
+Started GET "/pictures/new" for 127.0.0.1 at Sat May 14 22:35:51 +0200 2011
+
+ActionController::RoutingError (No route matches "/pictures/new"):
+  
+
+Rendered /Users/yuchenzhang/.rvm/gems/ruby-1.8.7-p302/gems/actionpack-3.0.6/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.7ms)
+
+
+Started GET "/pictures" for 127.0.0.1 at Sat May 14 22:37:25 +0200 2011
+
+ActionController::RoutingError (No route matches "/pictures"):
+  
+
+Rendered /Users/yuchenzhang/.rvm/gems/ruby-1.8.7-p302/gems/actionpack-3.0.6/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started GET "/recipes/1" for 127.0.0.1 at Sat May 14 22:37:44 +0200 2011
+  Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSQL (0.9ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mRecipe Load (0.3ms)[0m  SELECT recipes.*, dishes.* FROM `recipes` INNER JOIN `dishes` ON `dishes`.`id` = `recipes`.`dish_id` WHERE `recipes`.`id` = 1 LIMIT 1
+  [1m[36mDish Load (0.3ms)[0m  [1mSELECT `dishes`.* FROM `dishes` WHERE `dishes`.`id` = 1 LIMIT 1[0m
+Rendered recipes/show.html.erb within layouts/application (16.9ms)
+Completed 200 OK in 169ms (Views: 40.2ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/pictures/new" for 127.0.0.1 at Sat May 14 22:38:44 +0200 2011
+  Processing by PicturesController#new as HTML
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_pictures_new_html_erb___1834528201_2175655420_0 at /Users/yuchenzhang/workspace/social_kitchen/app/views/pictures/new.html.erb:1)
+Rendered pictures/new.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 8ms (Views: 7.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pictures/new" for 127.0.0.1 at Sat May 14 22:41:01 +0200 2011
+  Processing by PicturesController#new as HTML
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_pictures_new_html_erb___1834528201_2175345800_0 at /Users/yuchenzhang/workspace/social_kitchen/app/views/pictures/new.html.erb:1)
+Rendered pictures/new.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 8ms (Views: 7.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pictures/new" for 127.0.0.1 at Sat May 14 22:42:18 +0200 2011
+  Processing by PicturesController#new as HTML
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_pictures_new_html_erb___1834528201_2175040040_0 at /Users/yuchenzhang/workspace/social_kitchen/app/views/pictures/new.html.erb:1)
+Rendered pictures/new.html.erb within layouts/application (53.6ms)
+Completed 200 OK in 58ms (Views: 58.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/pictures/new" for 127.0.0.1 at Sat May 14 22:42:25 +0200 2011
+
+ActionController::RoutingError (No route matches "/pictures/new"):
+  
+
+Rendered /Users/yuchenzhang/.rvm/gems/ruby-1.8.7-p302/gems/actionpack-3.0.6/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.7ms)
+
+
+Started POST "/pictures/new" for 127.0.0.1 at Sat May 14 22:47:26 +0200 2011
+
+ActionController::RoutingError (No route matches "/pictures/new"):
+  
+
+Rendered /Users/yuchenzhang/.rvm/gems/ruby-1.8.7-p302/gems/actionpack-3.0.6/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.7ms)
+
+
+Started GET "/pictures/new" for 127.0.0.1 at Sat May 14 22:50:07 +0200 2011
+  Processing by PicturesController#new as HTML
+Rendered pictures/new.html.erb within layouts/application (88.1ms)
+Completed   in 94ms
+
+ActionView::Template::Error (undefined method `post_path' for #<#<Class:0x1035169c8>:0x103514d58>):
+    1: <% form_for :picture, :url => post_path(@picture), :html => { :multipart => true } do |f| %>
+    2:   <%= f.file_field :image%>
+    3:   <%= f.submit :save%>
+    4: <% end %>
+  app/views/pictures/new.html.erb:1:in `_app_views_pictures_new_html_erb___1834528201_2175310380_0'
+
+Rendered /Users/yuchenzhang/.rvm/gems/ruby-1.8.7-p302/gems/actionpack-3.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+Rendered /Users/yuchenzhang/.rvm/gems/ruby-1.8.7-p302/gems/actionpack-3.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.9ms)
+Rendered /Users/yuchenzhang/.rvm/gems/ruby-1.8.7-p302/gems/actionpack-3.0.6/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (9.2ms)
+
+
+Started GET "/pictures/new" for 127.0.0.1 at Sat May 14 22:51:16 +0200 2011
+  Processing by PicturesController#new as HTML
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_pictures_new_html_erb___1834528201_2176530240_0 at /Users/yuchenzhang/workspace/social_kitchen/app/views/pictures/new.html.erb:1)
+Rendered pictures/new.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 8ms (Views: 7.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/pictures" for 127.0.0.1 at Sat May 14 22:51:20 +0200 2011
+
+AbstractController::ActionNotFound (The action 'create' could not be found for PicturesController):
+  
+
+Rendered /Users/yuchenzhang/.rvm/gems/ruby-1.8.7-p302/gems/actionpack-3.0.6/lib/action_dispatch/middleware/templates/rescues/unknown_action.erb within rescues/layout (0.7ms)
+
+
+Started GET "/pictures/new" for 127.0.0.1 at Sat May 14 22:53:15 +0200 2011
+  Processing by PicturesController#new as HTML
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_pictures_new_html_erb___1834528201_2177279380_0 at /Users/yuchenzhang/workspace/social_kitchen/app/views/pictures/new.html.erb:1)
+Rendered pictures/new.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 8ms (Views: 7.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/pictures" for 127.0.0.1 at Sat May 14 22:53:19 +0200 2011
+  Processing by PicturesController#create as HTML
+  Parameters: {"commit"=>"save", "authenticity_token"=>"kyFvoOy42IADuWkXoYeGMg/kPDFN/KPyj80geyHFrlU=", "utf8"=>"✓", "picture"=>{"image"=>#<ActionDispatch::Http::UploadedFile:0x103812ed8 @content_type="image/jpeg", @original_filename="Photo on 2010-09-23 at 21.41.jpg", @tempfile=#<File:/var/folders/Kc/KcqahteJHzCCemkFiQuM0k+++TI/-Tmp-/RackMultipart20110514-8592-u4h3g4-0>, @headers="Content-Disposition: form-data; name=\"picture[image]\"; filename=\"Photo on 2010-09-23 at 21.41.jpg\"\r\nContent-Type: image/jpeg\r\n">}}
+[paperclip] /Users/yuchenzhang/tools/ImageMagick-6.6.7/bin//identify -format %wx%h '/var/folders/Kc/KcqahteJHzCCemkFiQuM0k+++TI/-Tmp-/stream20110514-8592-18deko6-0.jpg[0]' 2>/dev/null
+[paperclip] /Users/yuchenzhang/tools/ImageMagick-6.6.7/bin//convert '/var/folders/Kc/KcqahteJHzCCemkFiQuM0k+++TI/-Tmp-/stream20110514-8592-18deko6-0.jpg[0]' -resize "x100" -crop "100x100+16+0" +repage '/var/folders/Kc/KcqahteJHzCCemkFiQuM0k+++TI/-Tmp-/stream20110514-8592-18deko6-020110514-8592-bza0gd-0' 2>/dev/null
+[paperclip] /Users/yuchenzhang/tools/ImageMagick-6.6.7/bin//identify -format %wx%h '/var/folders/Kc/KcqahteJHzCCemkFiQuM0k+++TI/-Tmp-/stream20110514-8592-18deko6-0.jpg[0]' 2>/dev/null
+[paperclip] /Users/yuchenzhang/tools/ImageMagick-6.6.7/bin//convert '/var/folders/Kc/KcqahteJHzCCemkFiQuM0k+++TI/-Tmp-/stream20110514-8592-18deko6-0.jpg[0]' -resize "150x150>" '/var/folders/Kc/KcqahteJHzCCemkFiQuM0k+++TI/-Tmp-/stream20110514-8592-18deko6-020110514-8592-15798j8-0' 2>/dev/null
+  [1m[36mSQL (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  SHOW TABLES
+  [1m[36mSQL (1.3ms)[0m  [1mdescribe `pictures`[0m
+  [1m[35mAREL (0.4ms)[0m  INSERT INTO `pictures` (`updated_at`, `image_file_size`, `image_content_type`, `caption`, `uri`, `created_at`, `image_updated_at`, `image_file_name`) VALUES ('2011-05-14 20:53:20', 95924, 'image/jpeg', NULL, NULL, '2011-05-14 20:53:20', '2011-05-14 20:53:19', 'Photo on 2010-09-23 at 21.41.jpg')
+[paperclip] Saving attachments.
+[paperclip] saving /Users/yuchenzhang/workspace/social_kitchen/public/system/images/1/thumb/Photo on 2010-09-23 at 21.41.jpg
+[paperclip] saving /Users/yuchenzhang/workspace/social_kitchen/public/system/images/1/small/Photo on 2010-09-23 at 21.41.jpg
+[paperclip] saving /Users/yuchenzhang/workspace/social_kitchen/public/system/images/1/original/Photo on 2010-09-23 at 21.41.jpg
+  [1m[36mSQL (0.5ms)[0m  [1mCOMMIT[0m
+Rendered text template (0.0ms)
+Completed 200 OK in 1070ms (Views: 24.7ms | ActiveRecord: 3.3ms)
+  [1m[36mPicture Load (0.4ms)[0m  [1mSELECT `pictures`.* FROM `pictures` LIMIT 1[0m
+
+
+Started POST "/pictures" for 127.0.0.1 at Sat May 14 22:56:53 +0200 2011
+  Processing by PicturesController#create as HTML
+  Parameters: {"commit"=>"save", "authenticity_token"=>"kyFvoOy42IADuWkXoYeGMg/kPDFN/KPyj80geyHFrlU=", "utf8"=>"✓", "picture"=>{"image"=>#<ActionDispatch::Http::UploadedFile:0x10387b280 @content_type="image/jpeg", @original_filename="Photo on 2010-09-23 at 21.41.jpg", @tempfile=#<File:/var/folders/Kc/KcqahteJHzCCemkFiQuM0k+++TI/-Tmp-/RackMultipart20110514-8592-198qk2c-0>, @headers="Content-Disposition: form-data; name=\"picture[image]\"; filename=\"Photo on 2010-09-23 at 21.41.jpg\"\r\nContent-Type: image/jpeg\r\n">}}
+[paperclip] /Users/yuchenzhang/tools/ImageMagick-6.6.7/bin//identify -format %wx%h '/var/folders/Kc/KcqahteJHzCCemkFiQuM0k+++TI/-Tmp-/stream20110514-8592-iu2uhh-0.jpg[0]' 2>/dev/null
+[paperclip] /Users/yuchenzhang/tools/ImageMagick-6.6.7/bin//convert '/var/folders/Kc/KcqahteJHzCCemkFiQuM0k+++TI/-Tmp-/stream20110514-8592-iu2uhh-0.jpg[0]' -resize "x100" -crop "100x100+16+0" +repage '/var/folders/Kc/KcqahteJHzCCemkFiQuM0k+++TI/-Tmp-/stream20110514-8592-iu2uhh-020110514-8592-1m5cgdy-0' 2>/dev/null
+[paperclip] /Users/yuchenzhang/tools/ImageMagick-6.6.7/bin//identify -format %wx%h '/var/folders/Kc/KcqahteJHzCCemkFiQuM0k+++TI/-Tmp-/stream20110514-8592-iu2uhh-0.jpg[0]' 2>/dev/null
+[paperclip] /Users/yuchenzhang/tools/ImageMagick-6.6.7/bin//convert '/var/folders/Kc/KcqahteJHzCCemkFiQuM0k+++TI/-Tmp-/stream20110514-8592-iu2uhh-0.jpg[0]' -resize "150x150>" '/var/folders/Kc/KcqahteJHzCCemkFiQuM0k+++TI/-Tmp-/stream20110514-8592-iu2uhh-020110514-8592-kfbtjq-0' 2>/dev/null
+  [1m[35mSQL (0.2ms)[0m  BEGIN
+  [1m[36mSQL (1.1ms)[0m  [1mdescribe `pictures`[0m
+  [1m[35mAREL (0.4ms)[0m  INSERT INTO `pictures` (`image_updated_at`, `uri`, `image_content_type`, `caption`, `created_at`, `updated_at`, `image_file_name`, `image_file_size`) VALUES ('2011-05-14 20:56:53', NULL, 'image/jpeg', NULL, '2011-05-14 20:56:53', '2011-05-14 20:56:53', 'Photo on 2010-09-23 at 21.41.jpg', 95924)
+[paperclip] Saving attachments.
+[paperclip] saving /Users/yuchenzhang/workspace/social_kitchen/public/system/images/2/thumb/Photo on 2010-09-23 at 21.41.jpg
+[paperclip] saving /Users/yuchenzhang/workspace/social_kitchen/public/system/images/2/small/Photo on 2010-09-23 at 21.41.jpg
+[paperclip] saving /Users/yuchenzhang/workspace/social_kitchen/public/system/images/2/original/Photo on 2010-09-23 at 21.41.jpg
+  [1m[36mSQL (0.7ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/pictures
+Completed 302 Found in 190ms
+
+
+Started GET "/pictures" for 127.0.0.1 at Sat May 14 22:56:53 +0200 2011
+
+AbstractController::ActionNotFound (The action 'index' could not be found for PicturesController):
+  
+
+Rendered /Users/yuchenzhang/.rvm/gems/ruby-1.8.7-p302/gems/actionpack-3.0.6/lib/action_dispatch/middleware/templates/rescues/unknown_action.erb within rescues/layout (0.7ms)
+
+
+Started POST "/pictures" for 127.0.0.1 at Sat May 14 22:58:37 +0200 2011
+  Processing by PicturesController#create as HTML
+  Parameters: {"commit"=>"save", "authenticity_token"=>"kyFvoOy42IADuWkXoYeGMg/kPDFN/KPyj80geyHFrlU=", "utf8"=>"✓", "picture"=>{"image"=>#<ActionDispatch::Http::UploadedFile:0x103574c08 @content_type="image/jpeg", @original_filename="Photo on 2010-09-23 at 21.42 #2.jpg", @tempfile=#<File:/var/folders/Kc/KcqahteJHzCCemkFiQuM0k+++TI/-Tmp-/RackMultipart20110514-8592-1y4rymn-0>, @headers="Content-Disposition: form-data; name=\"picture[image]\"; filename=\"Photo on 2010-09-23 at 21.42 #2.jpg\"\r\nContent-Type: image/jpeg\r\n">}}
+[paperclip] /Users/yuchenzhang/tools/ImageMagick-6.6.7/bin//identify -format %wx%h '/var/folders/Kc/KcqahteJHzCCemkFiQuM0k+++TI/-Tmp-/stream20110514-8592-1q1x79x-0.jpg[0]' 2>/dev/null
+[paperclip] /Users/yuchenzhang/tools/ImageMagick-6.6.7/bin//convert '/var/folders/Kc/KcqahteJHzCCemkFiQuM0k+++TI/-Tmp-/stream20110514-8592-1q1x79x-0.jpg[0]' -resize "x100" -crop "100x100+16+0" +repage '/var/folders/Kc/KcqahteJHzCCemkFiQuM0k+++TI/-Tmp-/stream20110514-8592-1q1x79x-020110514-8592-ylrfu-0' 2>/dev/null
+[paperclip] /Users/yuchenzhang/tools/ImageMagick-6.6.7/bin//identify -format %wx%h '/var/folders/Kc/KcqahteJHzCCemkFiQuM0k+++TI/-Tmp-/stream20110514-8592-1q1x79x-0.jpg[0]' 2>/dev/null
+[paperclip] /Users/yuchenzhang/tools/ImageMagick-6.6.7/bin//convert '/var/folders/Kc/KcqahteJHzCCemkFiQuM0k+++TI/-Tmp-/stream20110514-8592-1q1x79x-0.jpg[0]' -resize "150x150>" '/var/folders/Kc/KcqahteJHzCCemkFiQuM0k+++TI/-Tmp-/stream20110514-8592-1q1x79x-020110514-8592-1qyluqh-0' 2>/dev/null
+  [1m[35mSQL (0.3ms)[0m  BEGIN
+  [1m[36mSQL (1.1ms)[0m  [1mdescribe `pictures`[0m
+  [1m[35mAREL (0.3ms)[0m  INSERT INTO `pictures` (`updated_at`, `created_at`, `image_file_name`, `image_updated_at`, `uri`, `caption`, `image_content_type`, `image_file_size`) VALUES ('2011-05-14 20:58:37', '2011-05-14 20:58:37', 'Photo on 2010-09-23 at 21.42 #2.jpg', '2011-05-14 20:58:37', NULL, NULL, 'image/jpeg', 92027)
+[paperclip] Saving attachments.
+[paperclip] saving /Users/yuchenzhang/workspace/social_kitchen/public/system/images/3/thumb/Photo on 2010-09-23 at 21.42 #2.jpg
+[paperclip] saving /Users/yuchenzhang/workspace/social_kitchen/public/system/images/3/small/Photo on 2010-09-23 at 21.42 #2.jpg
+[paperclip] saving /Users/yuchenzhang/workspace/social_kitchen/public/system/images/3/original/Photo on 2010-09-23 at 21.42 #2.jpg
+  [1m[36mSQL (0.7ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/pictures
+Completed 302 Found in 414ms
+
+
+Started GET "/pictures" for 127.0.0.1 at Sat May 14 22:58:37 +0200 2011
+  Processing by PicturesController#index as HTML
+  [1m[35mPicture Load (0.4ms)[0m  SELECT `pictures`.* FROM `pictures`
+Rendered pictures/index.html.erb within layouts/application (16.4ms)
+Completed   in 29ms
+
+ActionView::Template::Error (undefined method `avatar' for #<Picture:0x10379a500>):
+    1: <% @pictures.each do |p|%>
+    2: <%= image_tag p.avatar.url %>
+    3: <%= image_tag p.avatar.url(:medium) %>
+    4: <%= image_tag p.avatar.url(:thumb) %>
+    5: <% end %>
+  app/views/pictures/index.html.erb:2:in `_app_views_pictures_index_html_erb___2060998871_2176612940_0'
+  app/views/pictures/index.html.erb:1:in `each'
+  app/views/pictures/index.html.erb:1:in `_app_views_pictures_index_html_erb___2060998871_2176612940_0'
+
+Rendered /Users/yuchenzhang/.rvm/gems/ruby-1.8.7-p302/gems/actionpack-3.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+Rendered /Users/yuchenzhang/.rvm/gems/ruby-1.8.7-p302/gems/actionpack-3.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (10.2ms)
+Rendered /Users/yuchenzhang/.rvm/gems/ruby-1.8.7-p302/gems/actionpack-3.0.6/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (81.5ms)
+
+
+Started GET "/pictures" for 127.0.0.1 at Sat May 14 22:59:03 +0200 2011
+  Processing by PicturesController#index as HTML
+  [1m[36mPicture Load (0.4ms)[0m  [1mSELECT `pictures`.* FROM `pictures`[0m
+Rendered pictures/index.html.erb within layouts/application (18.3ms)
+Completed 200 OK in 30ms (Views: 22.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/system/images/1/medium/Photo%20on%202010-09-23%20at%2021.41.jpg?1305406399" for 127.0.0.1 at Sat May 14 22:59:03 +0200 2011
+
+ActionController::RoutingError (No route matches "/system/images/1/medium/Photo%20on%202010-09-23%20at%2021.41.jpg"):
+  
+
+Rendered /Users/yuchenzhang/.rvm/gems/ruby-1.8.7-p302/gems/actionpack-3.0.6/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (60.9ms)
+
+
+Started GET "/system/images/2/medium/Photo%20on%202010-09-23%20at%2021.41.jpg?1305406613" for 127.0.0.1 at Sat May 14 22:59:03 +0200 2011
+
+ActionController::RoutingError (No route matches "/system/images/2/medium/Photo%20on%202010-09-23%20at%2021.41.jpg"):
+  
+
+Rendered /Users/yuchenzhang/.rvm/gems/ruby-1.8.7-p302/gems/actionpack-3.0.6/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started GET "/system/images/3/original/Photo%20on%202010-09-23%20at%2021.42%20" for 127.0.0.1 at Sat May 14 22:59:03 +0200 2011
+
+ActionController::RoutingError (No route matches "/system/images/3/original/Photo%20on%202010-09-23%20at%2021.42%20"):
+  
+
+Rendered /Users/yuchenzhang/.rvm/gems/ruby-1.8.7-p302/gems/actionpack-3.0.6/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started GET "/system/images/3/medium/Photo%20on%202010-09-23%20at%2021.42%20" for 127.0.0.1 at Sat May 14 22:59:03 +0200 2011
+
+ActionController::RoutingError (No route matches "/system/images/3/medium/Photo%20on%202010-09-23%20at%2021.42%20"):
+  
+
+Rendered /Users/yuchenzhang/.rvm/gems/ruby-1.8.7-p302/gems/actionpack-3.0.6/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/system/images/3/thumb/Photo%20on%202010-09-23%20at%2021.42%20" for 127.0.0.1 at Sat May 14 22:59:03 +0200 2011
+
+ActionController::RoutingError (No route matches "/system/images/3/thumb/Photo%20on%202010-09-23%20at%2021.42%20"):
+  
+
+Rendered /Users/yuchenzhang/.rvm/gems/ruby-1.8.7-p302/gems/actionpack-3.0.6/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started POST "/pictures" for 127.0.0.1 at Sat May 14 22:59:23 +0200 2011
+  Processing by PicturesController#create as HTML
+  Parameters: {"commit"=>"save", "authenticity_token"=>"kyFvoOy42IADuWkXoYeGMg/kPDFN/KPyj80geyHFrlU=", "utf8"=>"✓", "picture"=>{"image"=>#<ActionDispatch::Http::UploadedFile:0x1036637b8 @content_type="image/jpeg", @original_filename="Photo on 2010-09-23 at 21.48 #2.jpg", @tempfile=#<File:/var/folders/Kc/KcqahteJHzCCemkFiQuM0k+++TI/-Tmp-/RackMultipart20110514-8592-1cdpd13-0>, @headers="Content-Disposition: form-data; name=\"picture[image]\"; filename=\"Photo on 2010-09-23 at 21.48 #2.jpg\"\r\nContent-Type: image/jpeg\r\n">}}
+[paperclip] /Users/yuchenzhang/tools/ImageMagick-6.6.7/bin//identify -format %wx%h '/var/folders/Kc/KcqahteJHzCCemkFiQuM0k+++TI/-Tmp-/stream20110514-8592-spucnw-0.jpg[0]' 2>/dev/null
+[paperclip] /Users/yuchenzhang/tools/ImageMagick-6.6.7/bin//convert '/var/folders/Kc/KcqahteJHzCCemkFiQuM0k+++TI/-Tmp-/stream20110514-8592-spucnw-0.jpg[0]' -resize "x100" -crop "100x100+16+0" +repage '/var/folders/Kc/KcqahteJHzCCemkFiQuM0k+++TI/-Tmp-/stream20110514-8592-spucnw-020110514-8592-189p3gj-0' 2>/dev/null
+[paperclip] /Users/yuchenzhang/tools/ImageMagick-6.6.7/bin//identify -format %wx%h '/var/folders/Kc/KcqahteJHzCCemkFiQuM0k+++TI/-Tmp-/stream20110514-8592-spucnw-0.jpg[0]' 2>/dev/null
+[paperclip] /Users/yuchenzhang/tools/ImageMagick-6.6.7/bin//convert '/var/folders/Kc/KcqahteJHzCCemkFiQuM0k+++TI/-Tmp-/stream20110514-8592-spucnw-0.jpg[0]' -resize "150x150>" '/var/folders/Kc/KcqahteJHzCCemkFiQuM0k+++TI/-Tmp-/stream20110514-8592-spucnw-020110514-8592-jxdcoc-0' 2>/dev/null
+  [1m[35mSQL (0.3ms)[0m  BEGIN
+  [1m[36mSQL (1.1ms)[0m  [1mdescribe `pictures`[0m
+  [1m[35mAREL (0.3ms)[0m  INSERT INTO `pictures` (`image_content_type`, `image_file_size`, `image_file_name`, `updated_at`, `image_updated_at`, `uri`, `created_at`, `caption`) VALUES ('image/jpeg', 86600, 'Photo on 2010-09-23 at 21.48 #2.jpg', '2011-05-14 20:59:23', '2011-05-14 20:59:23', NULL, '2011-05-14 20:59:23', NULL)
+[paperclip] Saving attachments.
+[paperclip] saving /Users/yuchenzhang/workspace/social_kitchen/public/system/images/4/thumb/Photo on 2010-09-23 at 21.48 #2.jpg
+[paperclip] saving /Users/yuchenzhang/workspace/social_kitchen/public/system/images/4/small/Photo on 2010-09-23 at 21.48 #2.jpg
+[paperclip] saving /Users/yuchenzhang/workspace/social_kitchen/public/system/images/4/original/Photo on 2010-09-23 at 21.48 #2.jpg
+  [1m[36mSQL (0.8ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/pictures
+Completed 302 Found in 257ms
+
+
+Started GET "/pictures" for 127.0.0.1 at Sat May 14 22:59:24 +0200 2011
+  Processing by PicturesController#index as HTML
+  [1m[35mPicture Load (0.5ms)[0m  SELECT `pictures`.* FROM `pictures`
+Rendered pictures/index.html.erb within layouts/application (20.5ms)
+Completed 200 OK in 31ms (Views: 25.0ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/system/images/4/original/Photo%20on%202010-09-23%20at%2021.48%20" for 127.0.0.1 at Sat May 14 22:59:24 +0200 2011
+
+ActionController::RoutingError (No route matches "/system/images/4/original/Photo%20on%202010-09-23%20at%2021.48%20"):
+  
+
+Rendered /Users/yuchenzhang/.rvm/gems/ruby-1.8.7-p302/gems/actionpack-3.0.6/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started GET "/system/images/4/medium/Photo%20on%202010-09-23%20at%2021.48%20" for 127.0.0.1 at Sat May 14 22:59:24 +0200 2011
+
+ActionController::RoutingError (No route matches "/system/images/4/medium/Photo%20on%202010-09-23%20at%2021.48%20"):
+  
+
+Rendered /Users/yuchenzhang/.rvm/gems/ruby-1.8.7-p302/gems/actionpack-3.0.6/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started GET "/system/images/4/thumb/Photo%20on%202010-09-23%20at%2021.48%20" for 127.0.0.1 at Sat May 14 22:59:24 +0200 2011
+
+ActionController::RoutingError (No route matches "/system/images/4/thumb/Photo%20on%202010-09-23%20at%2021.48%20"):
+  
+
+Rendered /Users/yuchenzhang/.rvm/gems/ruby-1.8.7-p302/gems/actionpack-3.0.6/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.2ms)
+
+
+Started GET "/system/images/1/medium/Photo%20on%202010-09-23%20at%2021.41.jpg?1305406399" for 127.0.0.1 at Sat May 14 22:59:24 +0200 2011
+
+ActionController::RoutingError (No route matches "/system/images/1/medium/Photo%20on%202010-09-23%20at%2021.41.jpg"):
+  
+
+Rendered /Users/yuchenzhang/.rvm/gems/ruby-1.8.7-p302/gems/actionpack-3.0.6/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.3ms)
+
+
+Started GET "/system/images/2/medium/Photo%20on%202010-09-23%20at%2021.41.jpg?1305406613" for 127.0.0.1 at Sat May 14 22:59:24 +0200 2011
+
+ActionController::RoutingError (No route matches "/system/images/2/medium/Photo%20on%202010-09-23%20at%2021.41.jpg"):
+  
+
+Rendered /Users/yuchenzhang/.rvm/gems/ruby-1.8.7-p302/gems/actionpack-3.0.6/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started GET "/system/images/3/original/Photo%20on%202010-09-23%20at%2021.42%20" for 127.0.0.1 at Sat May 14 22:59:24 +0200 2011
+
+ActionController::RoutingError (No route matches "/system/images/3/original/Photo%20on%202010-09-23%20at%2021.42%20"):
+  
+
+Rendered /Users/yuchenzhang/.rvm/gems/ruby-1.8.7-p302/gems/actionpack-3.0.6/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/system/images/3/medium/Photo%20on%202010-09-23%20at%2021.42%20" for 127.0.0.1 at Sat May 14 22:59:24 +0200 2011
+
+ActionController::RoutingError (No route matches "/system/images/3/medium/Photo%20on%202010-09-23%20at%2021.42%20"):
+  
+
+Rendered /Users/yuchenzhang/.rvm/gems/ruby-1.8.7-p302/gems/actionpack-3.0.6/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.3ms)
+
+
+Started GET "/system/images/3/thumb/Photo%20on%202010-09-23%20at%2021.42%20" for 127.0.0.1 at Sat May 14 22:59:24 +0200 2011
+
+ActionController::RoutingError (No route matches "/system/images/3/thumb/Photo%20on%202010-09-23%20at%2021.42%20"):
+  
+
+Rendered /Users/yuchenzhang/.rvm/gems/ruby-1.8.7-p302/gems/actionpack-3.0.6/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started GET "/pictures/new" for 127.0.0.1 at Sat May 14 23:00:58 +0200 2011
+  Processing by PicturesController#new as HTML
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_pictures_new_html_erb___1834528201_2175519240_0 at /Users/yuchenzhang/workspace/social_kitchen/app/views/pictures/new.html.erb:1)
+Rendered pictures/new.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 10ms (Views: 9.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/pictures" for 127.0.0.1 at Sat May 14 23:01:04 +0200 2011
+  Processing by PicturesController#create as HTML
+  Parameters: {"commit"=>"save", "authenticity_token"=>"kyFvoOy42IADuWkXoYeGMg/kPDFN/KPyj80geyHFrlU=", "utf8"=>"✓", "picture"=>{"image"=>#<ActionDispatch::Http::UploadedFile:0x1034e36b8 @content_type="image/jpeg", @original_filename="Photo on 2010-10-03 at 13.01.jpg", @tempfile=#<File:/var/folders/Kc/KcqahteJHzCCemkFiQuM0k+++TI/-Tmp-/RackMultipart20110514-8592-1exsu0e-0>, @headers="Content-Disposition: form-data; name=\"picture[image]\"; filename=\"Photo on 2010-10-03 at 13.01.jpg\"\r\nContent-Type: image/jpeg\r\n">}}
+[paperclip] /Users/yuchenzhang/tools/ImageMagick-6.6.7/bin//identify -format %wx%h '/var/folders/Kc/KcqahteJHzCCemkFiQuM0k+++TI/-Tmp-/stream20110514-8592-1ipfp98-0.jpg[0]' 2>/dev/null
+[paperclip] /Users/yuchenzhang/tools/ImageMagick-6.6.7/bin//convert '/var/folders/Kc/KcqahteJHzCCemkFiQuM0k+++TI/-Tmp-/stream20110514-8592-1ipfp98-0.jpg[0]' -resize "x100" -crop "100x100+16+0" +repage '/var/folders/Kc/KcqahteJHzCCemkFiQuM0k+++TI/-Tmp-/stream20110514-8592-1ipfp98-020110514-8592-1pddrfo-0' 2>/dev/null
+[paperclip] /Users/yuchenzhang/tools/ImageMagick-6.6.7/bin//identify -format %wx%h '/var/folders/Kc/KcqahteJHzCCemkFiQuM0k+++TI/-Tmp-/stream20110514-8592-1ipfp98-0.jpg[0]' 2>/dev/null
+[paperclip] /Users/yuchenzhang/tools/ImageMagick-6.6.7/bin//convert '/var/folders/Kc/KcqahteJHzCCemkFiQuM0k+++TI/-Tmp-/stream20110514-8592-1ipfp98-0.jpg[0]' -resize "150x150>" '/var/folders/Kc/KcqahteJHzCCemkFiQuM0k+++TI/-Tmp-/stream20110514-8592-1ipfp98-020110514-8592-hwcqim-0' 2>/dev/null
+  [1m[36mSQL (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (1.2ms)[0m  describe `pictures`
+  [1m[36mAREL (0.5ms)[0m  [1mINSERT INTO `pictures` (`created_at`, `updated_at`, `uri`, `image_file_size`, `image_content_type`, `caption`, `image_updated_at`, `image_file_name`) VALUES ('2011-05-14 21:01:04', '2011-05-14 21:01:04', NULL, 55132, 'image/jpeg', NULL, '2011-05-14 21:01:04', 'Photo on 2010-10-03 at 13.01.jpg')[0m
+[paperclip] Saving attachments.
+[paperclip] saving /Users/yuchenzhang/workspace/social_kitchen/public/system/images/5/thumb/Photo on 2010-10-03 at 13.01.jpg
+[paperclip] saving /Users/yuchenzhang/workspace/social_kitchen/public/system/images/5/small/Photo on 2010-10-03 at 13.01.jpg
+[paperclip] saving /Users/yuchenzhang/workspace/social_kitchen/public/system/images/5/original/Photo on 2010-10-03 at 13.01.jpg
+  [1m[35mSQL (0.6ms)[0m  COMMIT
+Redirected to http://localhost:3000/pictures
+Completed 302 Found in 237ms
+
+
+Started GET "/pictures" for 127.0.0.1 at Sat May 14 23:01:04 +0200 2011
+  Processing by PicturesController#index as HTML
+  [1m[36mPicture Load (0.4ms)[0m  [1mSELECT `pictures`.* FROM `pictures`[0m
+Rendered pictures/index.html.erb within layouts/application (25.2ms)
+Completed 200 OK in 41ms (Views: 30.4ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/system/images/1/medium/Photo%20on%202010-09-23%20at%2021.41.jpg?1305406399" for 127.0.0.1 at Sat May 14 23:01:04 +0200 2011
+
+ActionController::RoutingError (No route matches "/system/images/1/medium/Photo%20on%202010-09-23%20at%2021.41.jpg"):
+  
+
+Rendered /Users/yuchenzhang/.rvm/gems/ruby-1.8.7-p302/gems/actionpack-3.0.6/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.2ms)
+
+
+Started GET "/system/images/5/medium/Photo%20on%202010-10-03%20at%2013.01.jpg?1305406864" for 127.0.0.1 at Sat May 14 23:01:04 +0200 2011
+
+ActionController::RoutingError (No route matches "/system/images/5/medium/Photo%20on%202010-10-03%20at%2013.01.jpg"):
+  
+
+Rendered /Users/yuchenzhang/.rvm/gems/ruby-1.8.7-p302/gems/actionpack-3.0.6/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.3ms)
+
+
+Started GET "/system/images/2/medium/Photo%20on%202010-09-23%20at%2021.41.jpg?1305406613" for 127.0.0.1 at Sat May 14 23:01:04 +0200 2011
+
+ActionController::RoutingError (No route matches "/system/images/2/medium/Photo%20on%202010-09-23%20at%2021.41.jpg"):
+  
+
+Rendered /Users/yuchenzhang/.rvm/gems/ruby-1.8.7-p302/gems/actionpack-3.0.6/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started GET "/system/images/3/original/Photo%20on%202010-09-23%20at%2021.42%20" for 127.0.0.1 at Sat May 14 23:01:04 +0200 2011
+
+ActionController::RoutingError (No route matches "/system/images/3/original/Photo%20on%202010-09-23%20at%2021.42%20"):
+  
+
+Rendered /Users/yuchenzhang/.rvm/gems/ruby-1.8.7-p302/gems/actionpack-3.0.6/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started GET "/system/images/3/medium/Photo%20on%202010-09-23%20at%2021.42%20" for 127.0.0.1 at Sat May 14 23:01:04 +0200 2011
+
+ActionController::RoutingError (No route matches "/system/images/3/medium/Photo%20on%202010-09-23%20at%2021.42%20"):
+  
+
+Rendered /Users/yuchenzhang/.rvm/gems/ruby-1.8.7-p302/gems/actionpack-3.0.6/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started GET "/system/images/3/thumb/Photo%20on%202010-09-23%20at%2021.42%20" for 127.0.0.1 at Sat May 14 23:01:05 +0200 2011
+
+ActionController::RoutingError (No route matches "/system/images/3/thumb/Photo%20on%202010-09-23%20at%2021.42%20"):
+  
+
+Rendered /Users/yuchenzhang/.rvm/gems/ruby-1.8.7-p302/gems/actionpack-3.0.6/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started GET "/system/images/4/original/Photo%20on%202010-09-23%20at%2021.48%20" for 127.0.0.1 at Sat May 14 23:01:05 +0200 2011
+
+ActionController::RoutingError (No route matches "/system/images/4/original/Photo%20on%202010-09-23%20at%2021.48%20"):
+  
+
+Rendered /Users/yuchenzhang/.rvm/gems/ruby-1.8.7-p302/gems/actionpack-3.0.6/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started GET "/system/images/4/medium/Photo%20on%202010-09-23%20at%2021.48%20" for 127.0.0.1 at Sat May 14 23:01:05 +0200 2011
+
+ActionController::RoutingError (No route matches "/system/images/4/medium/Photo%20on%202010-09-23%20at%2021.48%20"):
+  
+
+Rendered /Users/yuchenzhang/.rvm/gems/ruby-1.8.7-p302/gems/actionpack-3.0.6/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started GET "/system/images/4/thumb/Photo%20on%202010-09-23%20at%2021.48%20" for 127.0.0.1 at Sat May 14 23:01:05 +0200 2011
+
+ActionController::RoutingError (No route matches "/system/images/4/thumb/Photo%20on%202010-09-23%20at%2021.48%20"):
+  
+
+Rendered /Users/yuchenzhang/.rvm/gems/ruby-1.8.7-p302/gems/actionpack-3.0.6/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started GET "/safari/null" for 127.0.0.1 at Sun May 15 17:53:46 +0200 2011
+
+ActionController::RoutingError (No route matches "/safari/null"):
+  
+
+Rendered /Users/yuchenzhang/.rvm/gems/ruby-1.8.7-p302/gems/actionpack-3.0.6/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.2ms)
+
+
+Started GET "/safari/null" for 127.0.0.1 at Sun May 15 17:53:47 +0200 2011
+
+ActionController::RoutingError (No route matches "/safari/null"):
+  
+
+Rendered /Users/yuchenzhang/.rvm/gems/ruby-1.8.7-p302/gems/actionpack-3.0.6/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started GET "/safari/null" for 127.0.0.1 at Sun May 15 17:53:48 +0200 2011
+
+ActionController::RoutingError (No route matches "/safari/null"):
+  
+
+Rendered /Users/yuchenzhang/.rvm/gems/ruby-1.8.7-p302/gems/actionpack-3.0.6/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started GET "/safari/null" for 127.0.0.1 at Sun May 15 17:53:48 +0200 2011
+
+ActionController::RoutingError (No route matches "/safari/null"):
+  
+
+Rendered /Users/yuchenzhang/.rvm/gems/ruby-1.8.7-p302/gems/actionpack-3.0.6/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started GET "/safari/null" for 127.0.0.1 at Sun May 15 17:53:48 +0200 2011
+
+ActionController::RoutingError (No route matches "/safari/null"):
+  
+
+Rendered /Users/yuchenzhang/.rvm/gems/ruby-1.8.7-p302/gems/actionpack-3.0.6/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/mobile/null" for 127.0.0.1 at Sun May 15 18:00:36 +0200 2011
+
+ActionController::RoutingError (No route matches "/mobile/null"):
+  
+
+Rendered /Users/yuchenzhang/.rvm/gems/ruby-1.8.7-p302/gems/actionpack-3.0.6/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.2ms)
+
+
+Started GET "/mobile/null" for 127.0.0.1 at Sun May 15 18:00:37 +0200 2011
+
+ActionController::RoutingError (No route matches "/mobile/null"):
+  
+
+Rendered /Users/yuchenzhang/.rvm/gems/ruby-1.8.7-p302/gems/actionpack-3.0.6/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started GET "/mobile/null" for 127.0.0.1 at Sun May 15 18:00:38 +0200 2011
+
+ActionController::RoutingError (No route matches "/mobile/null"):
+  
+
+Rendered /Users/yuchenzhang/.rvm/gems/ruby-1.8.7-p302/gems/actionpack-3.0.6/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/mobile/null" for 127.0.0.1 at Sun May 15 18:00:38 +0200 2011
+
+ActionController::RoutingError (No route matches "/mobile/null"):
+  
+
+Rendered /Users/yuchenzhang/.rvm/gems/ruby-1.8.7-p302/gems/actionpack-3.0.6/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started GET "/mobile/null" for 127.0.0.1 at Sun May 15 18:00:39 +0200 2011
+
+ActionController::RoutingError (No route matches "/mobile/null"):
+  
+
+Rendered /Users/yuchenzhang/.rvm/gems/ruby-1.8.7-p302/gems/actionpack-3.0.6/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.2ms)
+
+
+Started GET "/mobile/null" for 127.0.0.1 at Sun May 15 18:00:48 +0200 2011
+
+ActionController::RoutingError (No route matches "/mobile/null"):
+  
+
+Rendered /Users/yuchenzhang/.rvm/gems/ruby-1.8.7-p302/gems/actionpack-3.0.6/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started GET "/mobile/null" for 127.0.0.1 at Sun May 15 18:00:48 +0200 2011
+
+ActionController::RoutingError (No route matches "/mobile/null"):
+  
+
+Rendered /Users/yuchenzhang/.rvm/gems/ruby-1.8.7-p302/gems/actionpack-3.0.6/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/mobile/null" for 127.0.0.1 at Sun May 15 18:00:51 +0200 2011
+
+ActionController::RoutingError (No route matches "/mobile/null"):
+  
+
+Rendered /Users/yuchenzhang/.rvm/gems/ruby-1.8.7-p302/gems/actionpack-3.0.6/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started GET "/mobile/null" for 127.0.0.1 at Sun May 15 18:00:51 +0200 2011
+
+ActionController::RoutingError (No route matches "/mobile/null"):
+  
+
+Rendered /Users/yuchenzhang/.rvm/gems/ruby-1.8.7-p302/gems/actionpack-3.0.6/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started GET "/mobile/null" for 127.0.0.1 at Sun May 15 18:56:38 +0200 2011
+
+ActionController::RoutingError (No route matches "/mobile/null"):
+  
+
+Rendered /Users/yuchenzhang/.rvm/gems/ruby-1.8.7-p302/gems/actionpack-3.0.6/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/mobile/null" for 127.0.0.1 at Sun May 15 18:56:40 +0200 2011
+
+ActionController::RoutingError (No route matches "/mobile/null"):
+  
+
+Rendered /Users/yuchenzhang/.rvm/gems/ruby-1.8.7-p302/gems/actionpack-3.0.6/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.4ms)
+
+
+Started GET "/mobile/null" for 127.0.0.1 at Sun May 15 18:56:40 +0200 2011
+
+ActionController::RoutingError (No route matches "/mobile/null"):
+  
+
+Rendered /Users/yuchenzhang/.rvm/gems/ruby-1.8.7-p302/gems/actionpack-3.0.6/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/mobile/null" for 127.0.0.1 at Sun May 15 18:56:41 +0200 2011
+
+ActionController::RoutingError (No route matches "/mobile/null"):
+  
+
+Rendered /Users/yuchenzhang/.rvm/gems/ruby-1.8.7-p302/gems/actionpack-3.0.6/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.2ms)
+
+
+Started GET "/mobile/null" for 127.0.0.1 at Sun May 15 18:56:41 +0200 2011
+
+ActionController::RoutingError (No route matches "/mobile/null"):
+  
+
+Rendered /Users/yuchenzhang/.rvm/gems/ruby-1.8.7-p302/gems/actionpack-3.0.6/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (25.7ms)
+
+
+Started GET "/mobile/null" for 127.0.0.1 at Sun May 15 18:56:47 +0200 2011
+
+ActionController::RoutingError (No route matches "/mobile/null"):
+  
+
+Rendered /Users/yuchenzhang/.rvm/gems/ruby-1.8.7-p302/gems/actionpack-3.0.6/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (25.3ms)
+
+
+Started GET "/mobile/null" for 127.0.0.1 at Sun May 15 18:56:47 +0200 2011
+
+ActionController::RoutingError (No route matches "/mobile/null"):
+  
+
+Rendered /Users/yuchenzhang/.rvm/gems/ruby-1.8.7-p302/gems/actionpack-3.0.6/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.3ms)
+
+
+Started GET "/mobile/null" for 127.0.0.1 at Sun May 15 18:56:50 +0200 2011
+
+ActionController::RoutingError (No route matches "/mobile/null"):
+  
+
+Rendered /Users/yuchenzhang/.rvm/gems/ruby-1.8.7-p302/gems/actionpack-3.0.6/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.1ms)
+
+
+Started GET "/mobile/null" for 127.0.0.1 at Sun May 15 18:56:50 +0200 2011
+
+ActionController::RoutingError (No route matches "/mobile/null"):
+  
+
+Rendered /Users/yuchenzhang/.rvm/gems/ruby-1.8.7-p302/gems/actionpack-3.0.6/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.2ms)
+
+
+Started GET "/mobile/null" for 127.0.0.1 at Sun May 15 18:57:16 +0200 2011
+
+ActionController::RoutingError (No route matches "/mobile/null"):
+  
+
+Rendered /Users/yuchenzhang/.rvm/gems/ruby-1.8.7-p302/gems/actionpack-3.0.6/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started GET "/mobile/null" for 127.0.0.1 at Sun May 15 18:57:16 +0200 2011
+
+ActionController::RoutingError (No route matches "/mobile/null"):
+  
+
+Rendered /Users/yuchenzhang/.rvm/gems/ruby-1.8.7-p302/gems/actionpack-3.0.6/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started GET "/mobile/null" for 127.0.0.1 at Sun May 15 18:59:43 +0200 2011
+
+ActionController::RoutingError (No route matches "/mobile/null"):
+  
+
+Rendered /Users/yuchenzhang/.rvm/gems/ruby-1.8.7-p302/gems/actionpack-3.0.6/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.7ms)
+
+
+Started GET "/mobile/null" for 127.0.0.1 at Sun May 15 18:59:43 +0200 2011
+
+ActionController::RoutingError (No route matches "/mobile/null"):
+  
+
+Rendered /Users/yuchenzhang/.rvm/gems/ruby-1.8.7-p302/gems/actionpack-3.0.6/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.2ms)
+
+
+Started GET "/mobile/null" for 127.0.0.1 at Sun May 15 18:59:49 +0200 2011
+
+ActionController::RoutingError (No route matches "/mobile/null"):
+  
+
+Rendered /Users/yuchenzhang/.rvm/gems/ruby-1.8.7-p302/gems/actionpack-3.0.6/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/mobile/null" for 127.0.0.1 at Sun May 15 18:59:49 +0200 2011
+
+ActionController::RoutingError (No route matches "/mobile/null"):
+  
+
+Rendered /Users/yuchenzhang/.rvm/gems/ruby-1.8.7-p302/gems/actionpack-3.0.6/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.7ms)
+
+
+Started GET "/mobile/null" for 127.0.0.1 at Sun May 15 19:01:07 +0200 2011
+
+ActionController::RoutingError (No route matches "/mobile/null"):
+  
+
+Rendered /Users/yuchenzhang/.rvm/gems/ruby-1.8.7-p302/gems/actionpack-3.0.6/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.7ms)
+
+
+Started GET "/mobile/null" for 10.0.1.5 at Sun May 15 19:03:12 +0200 2011
+
+ActionController::RoutingError (No route matches "/mobile/null"):
+  
+
+Rendered /Users/yuchenzhang/.rvm/gems/ruby-1.8.7-p302/gems/actionpack-3.0.6/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.3ms)
+
+
+Started GET "/mobile/null" for 10.0.1.5 at Sun May 15 19:03:12 +0200 2011
+
+ActionController::RoutingError (No route matches "/mobile/null"):
+  
+
+Rendered /Users/yuchenzhang/.rvm/gems/ruby-1.8.7-p302/gems/actionpack-3.0.6/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.1ms)
+
+
+Started GET "/mobile/null" for 10.0.1.5 at Sun May 15 19:03:12 +0200 2011
+
+ActionController::RoutingError (No route matches "/mobile/null"):
+  
+
+Rendered /Users/yuchenzhang/.rvm/gems/ruby-1.8.7-p302/gems/actionpack-3.0.6/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.2ms)
+
+
+Started GET "/mobile/null" for 10.0.1.5 at Sun May 15 19:03:13 +0200 2011
+
+ActionController::RoutingError (No route matches "/mobile/null"):
+  
+
+Rendered /Users/yuchenzhang/.rvm/gems/ruby-1.8.7-p302/gems/actionpack-3.0.6/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started GET "/mobile/null" for 10.0.1.5 at Sun May 15 19:03:13 +0200 2011
+
+ActionController::RoutingError (No route matches "/mobile/null"):
+  
+
+Rendered /Users/yuchenzhang/.rvm/gems/ruby-1.8.7-p302/gems/actionpack-3.0.6/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started GET "/mobile/null" for 10.0.1.5 at Sun May 15 19:03:13 +0200 2011
+
+ActionController::RoutingError (No route matches "/mobile/null"):
+  
+
+Rendered /Users/yuchenzhang/.rvm/gems/ruby-1.8.7-p302/gems/actionpack-3.0.6/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started GET "/mobile/null" for 10.0.1.5 at Sun May 15 19:03:25 +0200 2011
+
+ActionController::RoutingError (No route matches "/mobile/null"):
+  
+
+Rendered /Users/yuchenzhang/.rvm/gems/ruby-1.8.7-p302/gems/actionpack-3.0.6/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/mobile/null" for 10.0.1.5 at Sun May 15 19:03:25 +0200 2011
+
+ActionController::RoutingError (No route matches "/mobile/null"):
+  
+
+Rendered /Users/yuchenzhang/.rvm/gems/ruby-1.8.7-p302/gems/actionpack-3.0.6/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/mobile/null" for 10.0.1.5 at Sun May 15 19:03:28 +0200 2011
+
+ActionController::RoutingError (No route matches "/mobile/null"):
+  
+
+Rendered /Users/yuchenzhang/.rvm/gems/ruby-1.8.7-p302/gems/actionpack-3.0.6/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started GET "/mobile/null" for 10.0.1.5 at Sun May 15 19:03:28 +0200 2011
+
+ActionController::RoutingError (No route matches "/mobile/null"):
+  
+
+Rendered /Users/yuchenzhang/.rvm/gems/ruby-1.8.7-p302/gems/actionpack-3.0.6/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.5ms)
