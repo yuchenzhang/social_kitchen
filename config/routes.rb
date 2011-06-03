@@ -24,9 +24,12 @@ SocialKitchen::Application.routes.draw do
   #       get 'sold'
   #     end
   #   end
-
+  
+  resources :users do
+    resources :dishes
+  end
   resources :recipes
-  resources :pictures
+  resources :pictures      
   # Sample resource route with sub-resources:
   #   resources :products do
   #     resources :comments, :sales
@@ -56,5 +59,5 @@ SocialKitchen::Application.routes.draw do
 
   # This is a legacy wild controller route that's not recommended for RESTful applications.
   # Note: This route will make all actions in every controller accessible via GET requests.
-  # match ':controller(/:action(/:id(.:format)))'
+  match ':controller(/:action(/:id(.:format)))'
 end

@@ -1,4 +1,6 @@
-class PicturesController < ApplicationController
+class PicturesController < ApplicationController 
+  skip_before_filter :verify_authenticity_token
+  
   def index
     @pictures = Picture.all
   end
@@ -9,5 +11,6 @@ class PicturesController < ApplicationController
   def create
     @picture = Picture.create( params[:picture] )
     redirect_to pictures_path
-  end
+  end 
+  
 end
