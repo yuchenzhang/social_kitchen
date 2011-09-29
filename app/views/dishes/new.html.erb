@@ -1,0 +1,9 @@
+<% form_for :dish, :url => {:action => :create}, :html => { :multipart => true } do |f| %>
+  <%= f.text_field :name%>
+  <% 10.times do %>
+  	<p><%=file_field_tag "dish[images][]"%></p>  
+  <% end %>
+  <%= f.text_area :description%>
+  <%= f.hidden_field :user_id%>
+  <%= f.submit :save%>
+<% end %>
