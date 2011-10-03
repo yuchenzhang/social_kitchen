@@ -7,6 +7,12 @@ gem "rails", "3.1.0"
 
 gem 'mysql2'
 gem 'sass'
+gem 'devise'
+gem "oa-oauth", :require => "omniauth/oauth"
+gem 'haml'
+gem 'fb_graph'
+gem 'settingslogic'
+gem 'mongrel'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -21,7 +27,7 @@ gem 'jquery-rails'
 group :development, :test do
   gem "barista"
   gem "rspec-rails", "~> 2.0"
-  gem "factory_girl_rails"
+  gem "factory_girl_rails" 
 end
 
 

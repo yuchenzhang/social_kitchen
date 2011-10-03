@@ -1,0 +1,517 @@
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (21.8ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'social_kitchen_test.friendships' doesn't exist: SHOW FIELDS FROM `friendships`
+  [1m[35m (19.4ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.6ms)[0m  [1mSELECT 1 FROM `users` WHERE `users`.`email` = BINARY 'user1@localhost' LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.7ms)[0m  [1mSELECT 1 FROM `users` WHERE `users`.`email` = BINARY 'user1@localhost.localhost' LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO `users` (`authentication_token`, `confirmation_sent_at`, `confirmation_token`, `confirmed_at`, `created_at`, `current_sign_in_at`, `current_sign_in_ip`, `email`, `encrypted_password`, `facebook_id`, `failed_attempts`, `last_sign_in_at`, `last_sign_in_ip`, `locked_at`, `password_salt`, `remember_created_at`, `reset_password_sent_at`, `reset_password_token`, `sign_in_count`, `unlock_token`, `updated_at`) VALUES (NULL, NULL, NULL, NULL, '2011-10-02 09:50:40', NULL, NULL, 'user1@localhost.localhost', '$2a$04$K7ToA5kDqFPohENqhJLwvuWv0X4bpuI4Gzn7fYTfsy3HN8drhngxq', 'FACEBOOK1', 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, NULL, '2011-10-02 09:50:40')
+  [1m[36m (22.2ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM `friendships` 
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.5ms)[0m  SELECT 1 FROM `friendships` WHERE (`friendships`.`friend_id` = BINARY NULL AND `friendships`.`user_id` IS NULL) LIMIT 1
+  [1m[36m (0.5ms)[0m  [1mSELECT 1 FROM `users` WHERE `users`.`email` = BINARY 'user1@localhost.localhost' LIMIT 1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO `users` (`authentication_token`, `confirmation_sent_at`, `confirmation_token`, `confirmed_at`, `created_at`, `current_sign_in_at`, `current_sign_in_ip`, `email`, `encrypted_password`, `facebook_id`, `failed_attempts`, `last_sign_in_at`, `last_sign_in_ip`, `locked_at`, `password_salt`, `remember_created_at`, `reset_password_sent_at`, `reset_password_token`, `sign_in_count`, `unlock_token`, `updated_at`) VALUES (NULL, NULL, NULL, NULL, '2011-10-02 10:51:33', NULL, NULL, 'user1@localhost.localhost', '$2a$04$iVX/g2/mqyJQF3Nj6Y0X.ebnlkRpPVnZwU9TmmmoYywk8KJ9OtOX6', 'FACEBOOK1', 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, NULL, '2011-10-02 10:51:33')
+  [1m[36m (0.3ms)[0m  [1mSELECT 1 FROM `users` WHERE `users`.`email` = BINARY 'user2@localhost.localhost' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `users` (`authentication_token`, `confirmation_sent_at`, `confirmation_token`, `confirmed_at`, `created_at`, `current_sign_in_at`, `current_sign_in_ip`, `email`, `encrypted_password`, `facebook_id`, `failed_attempts`, `last_sign_in_at`, `last_sign_in_ip`, `locked_at`, `password_salt`, `remember_created_at`, `reset_password_sent_at`, `reset_password_token`, `sign_in_count`, `unlock_token`, `updated_at`) VALUES (NULL, NULL, NULL, NULL, '2011-10-02 10:51:33', NULL, NULL, 'user2@localhost.localhost', '$2a$04$4v3O6TA9Aztx3kJy8TQFI./6KCxGJcqm9y1x6DigOadQzRLFao/EW', 'FACEBOOK2', 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, NULL, '2011-10-02 10:51:33')
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `friendships` (`created_at`, `friend_id`, `updated_at`, `user_id`) VALUES ('2011-10-02 10:51:33', 3, '2011-10-02 10:51:33', 2)[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.5ms)[0m  [1mSELECT 1 FROM `friendships` WHERE `friendships`.`user_id` = 3 AND `friendships`.`friend_id` = 2 LIMIT 1[0m
+creating reverse friendship
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mSELECT 1 FROM `friendships` WHERE (`friendships`.`friend_id` = BINARY 2 AND `friendships`.`user_id` = 3) LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `friendships` (`created_at`, `friend_id`, `updated_at`, `user_id`) VALUES ('2011-10-02 10:51:33', 2, '2011-10-02 10:51:33', 3)
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM `friendships` 
+  [1m[36m (738.0ms)[0m  [1mROLLBACK[0m
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM `friendships` 
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  SELECT 1 FROM `friendships` WHERE (`friendships`.`friend_id` = BINARY NULL AND `friendships`.`user_id` IS NULL) LIMIT 1
+  [1m[36m (0.4ms)[0m  [1mSELECT 1 FROM `users` WHERE `users`.`email` = BINARY 'user1@localhost.localhost' LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO `users` (`authentication_token`, `confirmation_sent_at`, `confirmation_token`, `confirmed_at`, `created_at`, `current_sign_in_at`, `current_sign_in_ip`, `email`, `encrypted_password`, `facebook_id`, `failed_attempts`, `last_sign_in_at`, `last_sign_in_ip`, `locked_at`, `password_salt`, `remember_created_at`, `reset_password_sent_at`, `reset_password_token`, `sign_in_count`, `unlock_token`, `updated_at`) VALUES (NULL, NULL, NULL, NULL, '2011-10-02 10:57:04', NULL, NULL, 'user1@localhost.localhost', '$2a$04$LwGmec6eptHNGtjSZ0nFT.iP/N9w5AvoDCAqywy/cQxlRj5KAyine', 'FACEBOOK1', 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, NULL, '2011-10-02 10:57:04')
+  [1m[36m (0.2ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (10.7ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM `friendships` 
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.5ms)[0m  SELECT 1 FROM `friendships` WHERE (`friendships`.`friend_id` = BINARY NULL AND `friendships`.`user_id` IS NULL) LIMIT 1
+  [1m[36m (0.4ms)[0m  [1mSELECT 1 FROM `users` WHERE `users`.`email` = BINARY 'user1@localhost.localhost' LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO `users` (`authentication_token`, `confirmation_sent_at`, `confirmation_token`, `confirmed_at`, `created_at`, `current_sign_in_at`, `current_sign_in_ip`, `email`, `encrypted_password`, `facebook_id`, `failed_attempts`, `last_sign_in_at`, `last_sign_in_ip`, `locked_at`, `password_salt`, `remember_created_at`, `reset_password_sent_at`, `reset_password_token`, `sign_in_count`, `unlock_token`, `updated_at`) VALUES (NULL, NULL, NULL, NULL, '2011-10-02 10:57:57', NULL, NULL, 'user1@localhost.localhost', '$2a$04$7rPxmy9Bo5t9WaJVpZEO8OhRLTLRIeemWL0iHXc7KbNX6T/S9GPGO', 'FACEBOOK1', 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, NULL, '2011-10-02 10:57:57')
+  [1m[36m (0.5ms)[0m  [1mSELECT 1 FROM `users` WHERE `users`.`email` = BINARY 'user2@localhost.localhost' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `users` (`authentication_token`, `confirmation_sent_at`, `confirmation_token`, `confirmed_at`, `created_at`, `current_sign_in_at`, `current_sign_in_ip`, `email`, `encrypted_password`, `facebook_id`, `failed_attempts`, `last_sign_in_at`, `last_sign_in_ip`, `locked_at`, `password_salt`, `remember_created_at`, `reset_password_sent_at`, `reset_password_token`, `sign_in_count`, `unlock_token`, `updated_at`) VALUES (NULL, NULL, NULL, NULL, '2011-10-02 10:57:57', NULL, NULL, 'user2@localhost.localhost', '$2a$04$DAWpacVZZSyy1ulA/LBNzuA1Sf4EWI77V//aJTiyfj4aoz35pwi1W', 'FACEBOOK2', 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, NULL, '2011-10-02 10:57:57')
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `friendships` (`created_at`, `friend_id`, `updated_at`, `user_id`) VALUES ('2011-10-02 10:57:57', 6, '2011-10-02 10:57:57', 5)[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.5ms)[0m  [1mSELECT 1 FROM `friendships` WHERE `friendships`.`user_id` = 6 AND `friendships`.`friend_id` = 5 LIMIT 1[0m
+creating reverse friendship
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.4ms)[0m  [1mSELECT 1 FROM `friendships` WHERE (`friendships`.`friend_id` = BINARY 5 AND `friendships`.`user_id` = 6) LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `friendships` (`created_at`, `friend_id`, `updated_at`, `user_id`) VALUES ('2011-10-02 10:57:57', 5, '2011-10-02 10:57:57', 6)
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM `friendships` 
+  [1m[36m (26.8ms)[0m  [1mROLLBACK[0m
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM `friendships` 
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.5ms)[0m  SELECT 1 FROM `friendships` WHERE (`friendships`.`friend_id` = BINARY NULL AND `friendships`.`user_id` IS NULL) LIMIT 1
+  [1m[36m (0.4ms)[0m  [1mSELECT 1 FROM `users` WHERE `users`.`email` = BINARY 'user1@localhost.localhost' LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO `users` (`authentication_token`, `confirmation_sent_at`, `confirmation_token`, `confirmed_at`, `created_at`, `current_sign_in_at`, `current_sign_in_ip`, `email`, `encrypted_password`, `facebook_id`, `failed_attempts`, `last_sign_in_at`, `last_sign_in_ip`, `locked_at`, `password_salt`, `remember_created_at`, `reset_password_sent_at`, `reset_password_token`, `sign_in_count`, `unlock_token`, `updated_at`) VALUES (NULL, NULL, NULL, NULL, '2011-10-02 10:59:48', NULL, NULL, 'user1@localhost.localhost', '$2a$04$WAVxrZdQaykbnmFTaa1Tue5644wKxLc5P4U79h2jECezBJL65fskm', 'FACEBOOK1', 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, NULL, '2011-10-02 10:59:48')
+  [1m[36m (0.5ms)[0m  [1mSELECT 1 FROM `users` WHERE `users`.`email` = BINARY 'user2@localhost.localhost' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `users` (`authentication_token`, `confirmation_sent_at`, `confirmation_token`, `confirmed_at`, `created_at`, `current_sign_in_at`, `current_sign_in_ip`, `email`, `encrypted_password`, `facebook_id`, `failed_attempts`, `last_sign_in_at`, `last_sign_in_ip`, `locked_at`, `password_salt`, `remember_created_at`, `reset_password_sent_at`, `reset_password_token`, `sign_in_count`, `unlock_token`, `updated_at`) VALUES (NULL, NULL, NULL, NULL, '2011-10-02 10:59:48', NULL, NULL, 'user2@localhost.localhost', '$2a$04$YMWh/k.Njqst4haTEyWY6eEyuMXcipXvpq0obpXKkktqPxmd615A.', 'FACEBOOK2', 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, NULL, '2011-10-02 10:59:48')
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `friendships` (`created_at`, `friend_id`, `updated_at`, `user_id`) VALUES ('2011-10-02 10:59:48', 8, '2011-10-02 10:59:48', 7)[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.4ms)[0m  [1mSELECT 1 FROM `friendships` WHERE `friendships`.`user_id` = 8 AND `friendships`.`friend_id` = 7 LIMIT 1[0m
+creating reverse friendship
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.3ms)[0m  [1mSELECT 1 FROM `friendships` WHERE (`friendships`.`friend_id` = BINARY 7 AND `friendships`.`user_id` = 8) LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `friendships` (`created_at`, `friend_id`, `updated_at`, `user_id`) VALUES ('2011-10-02 10:59:48', 7, '2011-10-02 10:59:48', 8)
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM `friendships` 
+  [1m[36m (0.6ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  SELECT 1 FROM `friendships` WHERE (`friendships`.`friend_id` = BINARY NULL AND `friendships`.`user_id` IS NULL) LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mSELECT 1 FROM `users` WHERE `users`.`email` = BINARY 'user3@localhost.localhost' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `users` (`authentication_token`, `confirmation_sent_at`, `confirmation_token`, `confirmed_at`, `created_at`, `current_sign_in_at`, `current_sign_in_ip`, `email`, `encrypted_password`, `facebook_id`, `failed_attempts`, `last_sign_in_at`, `last_sign_in_ip`, `locked_at`, `password_salt`, `remember_created_at`, `reset_password_sent_at`, `reset_password_token`, `sign_in_count`, `unlock_token`, `updated_at`) VALUES (NULL, NULL, NULL, NULL, '2011-10-02 10:59:48', NULL, NULL, 'user3@localhost.localhost', '$2a$04$cLsy7q0Hl8xs52RsFlpnZePKdQDCeQcwDOzHID3bDiFXt7VvxqKLa', 'FACEBOOK3', 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, NULL, '2011-10-02 10:59:48')
+  [1m[36m (0.2ms)[0m  [1mSELECT 1 FROM `users` WHERE `users`.`email` = BINARY 'user4@localhost.localhost' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `users` (`authentication_token`, `confirmation_sent_at`, `confirmation_token`, `confirmed_at`, `created_at`, `current_sign_in_at`, `current_sign_in_ip`, `email`, `encrypted_password`, `facebook_id`, `failed_attempts`, `last_sign_in_at`, `last_sign_in_ip`, `locked_at`, `password_salt`, `remember_created_at`, `reset_password_sent_at`, `reset_password_token`, `sign_in_count`, `unlock_token`, `updated_at`) VALUES (NULL, NULL, NULL, NULL, '2011-10-02 10:59:48', NULL, NULL, 'user4@localhost.localhost', '$2a$04$QZovXr3EV3KHWM0o1kvMlesfHCXcQbU7QWU3qE/kgs101AUJAOYji', 'FACEBOOK4', 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, NULL, '2011-10-02 10:59:48')
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `friendships` (`created_at`, `friend_id`, `updated_at`, `user_id`) VALUES ('2011-10-02 10:59:48', 10, '2011-10-02 10:59:48', 9)[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mSELECT 1 FROM `friendships` WHERE `friendships`.`user_id` = 10 AND `friendships`.`friend_id` = 9 LIMIT 1[0m
+creating reverse friendship
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSELECT 1 FROM `friendships` WHERE (`friendships`.`friend_id` = BINARY 9 AND `friendships`.`user_id` = 10) LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO `friendships` (`created_at`, `friend_id`, `updated_at`, `user_id`) VALUES ('2011-10-02 10:59:48', 9, '2011-10-02 10:59:48', 10)
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM `friendships` 
+  [1m[36mFriendship Load (0.2ms)[0m  [1mSELECT `friendships`.* FROM `friendships` WHERE `friendships`.`id` = 7 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM `friendships` WHERE `friendships`.`id` = 7[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM `friendships` [0m
+  [1m[35m (0.6ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM `friendships` 
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.5ms)[0m  SELECT 1 FROM `friendships` WHERE (`friendships`.`friend_id` = BINARY NULL AND `friendships`.`user_id` IS NULL) LIMIT 1
+  [1m[36m (0.4ms)[0m  [1mSELECT 1 FROM `users` WHERE `users`.`email` = BINARY 'user1@localhost.localhost' LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO `users` (`authentication_token`, `confirmation_sent_at`, `confirmation_token`, `confirmed_at`, `created_at`, `current_sign_in_at`, `current_sign_in_ip`, `email`, `encrypted_password`, `facebook_id`, `failed_attempts`, `last_sign_in_at`, `last_sign_in_ip`, `locked_at`, `password_salt`, `remember_created_at`, `reset_password_sent_at`, `reset_password_token`, `sign_in_count`, `unlock_token`, `updated_at`) VALUES (NULL, NULL, NULL, NULL, '2011-10-02 11:02:50', NULL, NULL, 'user1@localhost.localhost', '$2a$04$WAzl5W4z45mpkvBYXy9v4eHBGLA00.dYTmheuLYrbnU1KAR9BFeCu', 'FACEBOOK1', 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, NULL, '2011-10-02 11:02:50')
+  [1m[36m (0.3ms)[0m  [1mSELECT 1 FROM `users` WHERE `users`.`email` = BINARY 'user2@localhost.localhost' LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO `users` (`authentication_token`, `confirmation_sent_at`, `confirmation_token`, `confirmed_at`, `created_at`, `current_sign_in_at`, `current_sign_in_ip`, `email`, `encrypted_password`, `facebook_id`, `failed_attempts`, `last_sign_in_at`, `last_sign_in_ip`, `locked_at`, `password_salt`, `remember_created_at`, `reset_password_sent_at`, `reset_password_token`, `sign_in_count`, `unlock_token`, `updated_at`) VALUES (NULL, NULL, NULL, NULL, '2011-10-02 11:02:50', NULL, NULL, 'user2@localhost.localhost', '$2a$04$lcP6JjPAnkjJXTtaRLqWZ.qfolMOmPBjIag/BlHJKOJ6ga/KisD3.', 'FACEBOOK2', 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, NULL, '2011-10-02 11:02:50')
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `friendships` (`created_at`, `friend_id`, `updated_at`, `user_id`) VALUES ('2011-10-02 11:02:50', 12, '2011-10-02 11:02:50', 11)[0m
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.5ms)[0m  [1mSELECT 1 FROM `friendships` WHERE `friendships`.`user_id` = 12 AND `friendships`.`friend_id` = 11 LIMIT 1[0m
+creating reverse friendship
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mSELECT 1 FROM `friendships` WHERE (`friendships`.`friend_id` = BINARY 11 AND `friendships`.`user_id` = 12) LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `friendships` (`created_at`, `friend_id`, `updated_at`, `user_id`) VALUES ('2011-10-02 11:02:50', 11, '2011-10-02 11:02:50', 12)
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM `friendships` 
+  [1m[36m (25.6ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.5ms)[0m  SELECT 1 FROM `friendships` WHERE (`friendships`.`friend_id` = BINARY NULL AND `friendships`.`user_id` IS NULL) LIMIT 1
+  [1m[36m (0.4ms)[0m  [1mSELECT 1 FROM `users` WHERE `users`.`email` = BINARY 'user3@localhost.localhost' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `users` (`authentication_token`, `confirmation_sent_at`, `confirmation_token`, `confirmed_at`, `created_at`, `current_sign_in_at`, `current_sign_in_ip`, `email`, `encrypted_password`, `facebook_id`, `failed_attempts`, `last_sign_in_at`, `last_sign_in_ip`, `locked_at`, `password_salt`, `remember_created_at`, `reset_password_sent_at`, `reset_password_token`, `sign_in_count`, `unlock_token`, `updated_at`) VALUES (NULL, NULL, NULL, NULL, '2011-10-02 11:02:50', NULL, NULL, 'user3@localhost.localhost', '$2a$04$mGnhXuWUedhpdYOU.2CNjuv1UEV9PTvAvxo7Hgy5X7F35Joth5fxy', 'FACEBOOK3', 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, NULL, '2011-10-02 11:02:50')
+  [1m[36m (0.4ms)[0m  [1mSELECT 1 FROM `users` WHERE `users`.`email` = BINARY 'user4@localhost.localhost' LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO `users` (`authentication_token`, `confirmation_sent_at`, `confirmation_token`, `confirmed_at`, `created_at`, `current_sign_in_at`, `current_sign_in_ip`, `email`, `encrypted_password`, `facebook_id`, `failed_attempts`, `last_sign_in_at`, `last_sign_in_ip`, `locked_at`, `password_salt`, `remember_created_at`, `reset_password_sent_at`, `reset_password_token`, `sign_in_count`, `unlock_token`, `updated_at`) VALUES (NULL, NULL, NULL, NULL, '2011-10-02 11:02:50', NULL, NULL, 'user4@localhost.localhost', '$2a$04$ubzUWgSFx.PhrqTMNOwcJe.L1ixQmpXZq1o0IYO2LM9ClazTI243K', 'FACEBOOK4', 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, NULL, '2011-10-02 11:02:50')
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `friendships` (`created_at`, `friend_id`, `updated_at`, `user_id`) VALUES ('2011-10-02 11:02:50', 14, '2011-10-02 11:02:50', 13)[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.3ms)[0m  [1mSELECT 1 FROM `friendships` WHERE `friendships`.`user_id` = 14 AND `friendships`.`friend_id` = 13 LIMIT 1[0m
+creating reverse friendship
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mSELECT 1 FROM `friendships` WHERE (`friendships`.`friend_id` = BINARY 13 AND `friendships`.`user_id` = 14) LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO `friendships` (`created_at`, `friend_id`, `updated_at`, `user_id`) VALUES ('2011-10-02 11:02:50', 13, '2011-10-02 11:02:50', 14)
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM `friendships` 
+  [1m[36mFriendship Load (0.4ms)[0m  [1mSELECT `friendships`.* FROM `friendships` WHERE `friendships`.`id` = 11 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM `friendships` WHERE `friendships`.`id` = 11[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.5ms)[0m  [1mROLLBACK[0m
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM `friendships` 
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  SELECT 1 FROM `friendships` WHERE (`friendships`.`friend_id` = BINARY NULL AND `friendships`.`user_id` IS NULL) LIMIT 1
+  [1m[36m (0.5ms)[0m  [1mSELECT 1 FROM `users` WHERE `users`.`email` = BINARY 'user1@localhost.localhost' LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO `users` (`authentication_token`, `confirmation_sent_at`, `confirmation_token`, `confirmed_at`, `created_at`, `current_sign_in_at`, `current_sign_in_ip`, `email`, `encrypted_password`, `facebook_id`, `failed_attempts`, `last_sign_in_at`, `last_sign_in_ip`, `locked_at`, `password_salt`, `remember_created_at`, `reset_password_sent_at`, `reset_password_token`, `sign_in_count`, `unlock_token`, `updated_at`) VALUES (NULL, NULL, NULL, NULL, '2011-10-02 11:03:40', NULL, NULL, 'user1@localhost.localhost', '$2a$04$x7/OyUCdJzzFLtkz/bCW/us4ye685tT4lECG/6ZGNRiLiMKotYHW.', 'FACEBOOK1', 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, NULL, '2011-10-02 11:03:40')
+  [1m[36m (0.3ms)[0m  [1mSELECT 1 FROM `users` WHERE `users`.`email` = BINARY 'user2@localhost.localhost' LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO `users` (`authentication_token`, `confirmation_sent_at`, `confirmation_token`, `confirmed_at`, `created_at`, `current_sign_in_at`, `current_sign_in_ip`, `email`, `encrypted_password`, `facebook_id`, `failed_attempts`, `last_sign_in_at`, `last_sign_in_ip`, `locked_at`, `password_salt`, `remember_created_at`, `reset_password_sent_at`, `reset_password_token`, `sign_in_count`, `unlock_token`, `updated_at`) VALUES (NULL, NULL, NULL, NULL, '2011-10-02 11:03:40', NULL, NULL, 'user2@localhost.localhost', '$2a$04$V.mBNEseYo8pACMEjOFydOgo95uIT5I5X5SKPjpYW5dGYMrjR0ey6', 'FACEBOOK2', 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, NULL, '2011-10-02 11:03:40')
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `friendships` (`created_at`, `friend_id`, `updated_at`, `user_id`) VALUES ('2011-10-02 11:03:40', 16, '2011-10-02 11:03:40', 15)[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.5ms)[0m  [1mSELECT 1 FROM `friendships` WHERE `friendships`.`user_id` = 16 AND `friendships`.`friend_id` = 15 LIMIT 1[0m
+creating reverse friendship
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mSELECT 1 FROM `friendships` WHERE (`friendships`.`friend_id` = BINARY 15 AND `friendships`.`user_id` = 16) LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `friendships` (`created_at`, `friend_id`, `updated_at`, `user_id`) VALUES ('2011-10-02 11:03:40', 15, '2011-10-02 11:03:40', 16)
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM `friendships` 
+  [1m[36m (0.5ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.5ms)[0m  SELECT 1 FROM `friendships` WHERE (`friendships`.`friend_id` = BINARY NULL AND `friendships`.`user_id` IS NULL) LIMIT 1
+  [1m[36m (0.4ms)[0m  [1mSELECT 1 FROM `users` WHERE `users`.`email` = BINARY 'user3@localhost.localhost' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `users` (`authentication_token`, `confirmation_sent_at`, `confirmation_token`, `confirmed_at`, `created_at`, `current_sign_in_at`, `current_sign_in_ip`, `email`, `encrypted_password`, `facebook_id`, `failed_attempts`, `last_sign_in_at`, `last_sign_in_ip`, `locked_at`, `password_salt`, `remember_created_at`, `reset_password_sent_at`, `reset_password_token`, `sign_in_count`, `unlock_token`, `updated_at`) VALUES (NULL, NULL, NULL, NULL, '2011-10-02 11:03:40', NULL, NULL, 'user3@localhost.localhost', '$2a$04$s6nGvalmxdSJ/VowPnS0EOid5u7GphCCav1EeuADMeQN8uLNQRO6y', 'FACEBOOK3', 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, NULL, '2011-10-02 11:03:40')
+  [1m[36m (0.4ms)[0m  [1mSELECT 1 FROM `users` WHERE `users`.`email` = BINARY 'user4@localhost.localhost' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `users` (`authentication_token`, `confirmation_sent_at`, `confirmation_token`, `confirmed_at`, `created_at`, `current_sign_in_at`, `current_sign_in_ip`, `email`, `encrypted_password`, `facebook_id`, `failed_attempts`, `last_sign_in_at`, `last_sign_in_ip`, `locked_at`, `password_salt`, `remember_created_at`, `reset_password_sent_at`, `reset_password_token`, `sign_in_count`, `unlock_token`, `updated_at`) VALUES (NULL, NULL, NULL, NULL, '2011-10-02 11:03:40', NULL, NULL, 'user4@localhost.localhost', '$2a$04$d4UT8EFSAgjx0eEmKpApseR7MQqU9jdbz7zXCDrfTeKwkfqvxix7.', 'FACEBOOK4', 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, NULL, '2011-10-02 11:03:40')
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `friendships` (`created_at`, `friend_id`, `updated_at`, `user_id`) VALUES ('2011-10-02 11:03:40', 18, '2011-10-02 11:03:40', 17)[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.3ms)[0m  [1mSELECT 1 FROM `friendships` WHERE `friendships`.`user_id` = 18 AND `friendships`.`friend_id` = 17 LIMIT 1[0m
+creating reverse friendship
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mSELECT 1 FROM `friendships` WHERE (`friendships`.`friend_id` = BINARY 17 AND `friendships`.`user_id` = 18) LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `friendships` (`created_at`, `friend_id`, `updated_at`, `user_id`) VALUES ('2011-10-02 11:03:40', 17, '2011-10-02 11:03:40', 18)
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM `friendships` 
+  [1m[36mFriendship Load (0.3ms)[0m  [1mSELECT `friendships`.* FROM `friendships` WHERE `friendships`.`id` = 15 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM `friendships` WHERE `friendships`.`id` = 15[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+destroying reverse friendship
+  [1m[36m (10.9ms)[0m  [1mROLLBACK[0m
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM `friendships` 
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.5ms)[0m  SELECT 1 FROM `friendships` WHERE (`friendships`.`friend_id` = BINARY NULL AND `friendships`.`user_id` IS NULL) LIMIT 1
+  [1m[36m (0.4ms)[0m  [1mSELECT 1 FROM `users` WHERE `users`.`email` = BINARY 'user1@localhost.localhost' LIMIT 1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO `users` (`authentication_token`, `confirmation_sent_at`, `confirmation_token`, `confirmed_at`, `created_at`, `current_sign_in_at`, `current_sign_in_ip`, `email`, `encrypted_password`, `facebook_id`, `failed_attempts`, `last_sign_in_at`, `last_sign_in_ip`, `locked_at`, `password_salt`, `remember_created_at`, `reset_password_sent_at`, `reset_password_token`, `sign_in_count`, `unlock_token`, `updated_at`) VALUES (NULL, NULL, NULL, NULL, '2011-10-02 11:05:18', NULL, NULL, 'user1@localhost.localhost', '$2a$04$cZGfobrWlkY0PQZ6XBJ5s.N4GoWSqrtk1Zxn4TQx7nLnL6PmvFYCK', 'FACEBOOK1', 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, NULL, '2011-10-02 11:05:18')
+  [1m[36m (0.5ms)[0m  [1mSELECT 1 FROM `users` WHERE `users`.`email` = BINARY 'user2@localhost.localhost' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `users` (`authentication_token`, `confirmation_sent_at`, `confirmation_token`, `confirmed_at`, `created_at`, `current_sign_in_at`, `current_sign_in_ip`, `email`, `encrypted_password`, `facebook_id`, `failed_attempts`, `last_sign_in_at`, `last_sign_in_ip`, `locked_at`, `password_salt`, `remember_created_at`, `reset_password_sent_at`, `reset_password_token`, `sign_in_count`, `unlock_token`, `updated_at`) VALUES (NULL, NULL, NULL, NULL, '2011-10-02 11:05:18', NULL, NULL, 'user2@localhost.localhost', '$2a$04$bJUBG44KCw8hGx6slbJj4.UwrhitCCVn.aka.BGQ0qtao/YQlYVTq', 'FACEBOOK2', 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, NULL, '2011-10-02 11:05:18')
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `friendships` (`created_at`, `friend_id`, `updated_at`, `user_id`) VALUES ('2011-10-02 11:05:18', 20, '2011-10-02 11:05:18', 19)[0m
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.5ms)[0m  [1mSELECT 1 FROM `friendships` WHERE `friendships`.`user_id` = 20 AND `friendships`.`friend_id` = 19 LIMIT 1[0m
+creating reverse friendship
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mSELECT 1 FROM `friendships` WHERE (`friendships`.`friend_id` = BINARY 19 AND `friendships`.`user_id` = 20) LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `friendships` (`created_at`, `friend_id`, `updated_at`, `user_id`) VALUES ('2011-10-02 11:05:18', 19, '2011-10-02 11:05:18', 20)
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM `friendships` 
+  [1m[36m (28.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.5ms)[0m  SELECT 1 FROM `friendships` WHERE (`friendships`.`friend_id` = BINARY NULL AND `friendships`.`user_id` IS NULL) LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mSELECT 1 FROM `users` WHERE `users`.`email` = BINARY 'user3@localhost.localhost' LIMIT 1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO `users` (`authentication_token`, `confirmation_sent_at`, `confirmation_token`, `confirmed_at`, `created_at`, `current_sign_in_at`, `current_sign_in_ip`, `email`, `encrypted_password`, `facebook_id`, `failed_attempts`, `last_sign_in_at`, `last_sign_in_ip`, `locked_at`, `password_salt`, `remember_created_at`, `reset_password_sent_at`, `reset_password_token`, `sign_in_count`, `unlock_token`, `updated_at`) VALUES (NULL, NULL, NULL, NULL, '2011-10-02 11:05:18', NULL, NULL, 'user3@localhost.localhost', '$2a$04$O70Y.qGWWe24j90o3nKAyu2cG8U3vvlgwu1siakHqf2T5tOp4j.mm', 'FACEBOOK3', 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, NULL, '2011-10-02 11:05:18')
+  [1m[36m (0.3ms)[0m  [1mSELECT 1 FROM `users` WHERE `users`.`email` = BINARY 'user4@localhost.localhost' LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO `users` (`authentication_token`, `confirmation_sent_at`, `confirmation_token`, `confirmed_at`, `created_at`, `current_sign_in_at`, `current_sign_in_ip`, `email`, `encrypted_password`, `facebook_id`, `failed_attempts`, `last_sign_in_at`, `last_sign_in_ip`, `locked_at`, `password_salt`, `remember_created_at`, `reset_password_sent_at`, `reset_password_token`, `sign_in_count`, `unlock_token`, `updated_at`) VALUES (NULL, NULL, NULL, NULL, '2011-10-02 11:05:18', NULL, NULL, 'user4@localhost.localhost', '$2a$04$s1/fcZF2JHtgNBTnk76SQupkIjNqjHZ.1J28v4NLlq4wRMmPTIoJO', 'FACEBOOK4', 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, NULL, '2011-10-02 11:05:18')
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `friendships` (`created_at`, `friend_id`, `updated_at`, `user_id`) VALUES ('2011-10-02 11:05:18', 22, '2011-10-02 11:05:18', 21)[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mSELECT 1 FROM `friendships` WHERE `friendships`.`user_id` = 22 AND `friendships`.`friend_id` = 21 LIMIT 1[0m
+creating reverse friendship
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.3ms)[0m  [1mSELECT 1 FROM `friendships` WHERE (`friendships`.`friend_id` = BINARY 21 AND `friendships`.`user_id` = 22) LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `friendships` (`created_at`, `friend_id`, `updated_at`, `user_id`) VALUES ('2011-10-02 11:05:18', 21, '2011-10-02 11:05:18', 22)
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM `friendships` 
+  [1m[36mFriendship Load (0.2ms)[0m  [1mSELECT `friendships`.* FROM `friendships` WHERE `friendships`.`id` = 19 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM `friendships` WHERE `friendships`.`id` = 19[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mFriendship Load (0.2ms)[0m  [1mSELECT `friendships`.* FROM `friendships` WHERE `friendships`.`user_id` = 22 AND `friendships`.`friend_id` = 21 LIMIT 1[0m
+destroying reverse friendship
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM `friendships` WHERE `friendships`.`id` = 20[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mFriendship Load (0.1ms)[0m  [1mSELECT `friendships`.* FROM `friendships` WHERE `friendships`.`user_id` = 21 AND `friendships`.`friend_id` = 22 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM `friendships` 
+  [1m[36m (14.5ms)[0m  [1mROLLBACK[0m
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM `placed_pictures` WHERE `placed_pictures`.`place_type` IN ('UserAvatar')
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.5ms)[0m  SELECT 1 FROM `users` WHERE `users`.`email` = BINARY 'user1@localhost.localhost' LIMIT 1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO `users` (`authentication_token`, `confirmation_sent_at`, `confirmation_token`, `confirmed_at`, `created_at`, `current_sign_in_at`, `current_sign_in_ip`, `email`, `encrypted_password`, `facebook_id`, `failed_attempts`, `last_sign_in_at`, `last_sign_in_ip`, `locked_at`, `password_salt`, `remember_created_at`, `reset_password_sent_at`, `reset_password_token`, `sign_in_count`, `unlock_token`, `updated_at`) VALUES (NULL, NULL, NULL, NULL, '2011-10-02 14:51:46', NULL, NULL, 'user1@localhost.localhost', '$2a$04$jR9PAFZSyhEtLSHruI4PrenOGydzHYPSleNR3U2nn6n5v.VqNphA2', 'FACEBOOK1', 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, NULL, '2011-10-02 14:51:46')[0m
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM `placed_pictures` WHERE `placed_pictures`.`place_type` IN ('UserAvatar')[0m
+  [1m[35m (320.8ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.4ms)[0m  [1mSELECT 1 FROM `users` WHERE `users`.`email` = BINARY 'user2@localhost.localhost' LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO `users` (`authentication_token`, `confirmation_sent_at`, `confirmation_token`, `confirmed_at`, `created_at`, `current_sign_in_at`, `current_sign_in_ip`, `email`, `encrypted_password`, `facebook_id`, `failed_attempts`, `last_sign_in_at`, `last_sign_in_ip`, `locked_at`, `password_salt`, `remember_created_at`, `reset_password_sent_at`, `reset_password_token`, `sign_in_count`, `unlock_token`, `updated_at`) VALUES (NULL, NULL, NULL, NULL, '2011-10-02 14:51:46', NULL, NULL, 'user2@localhost.localhost', '$2a$04$bCO2jEMjIAYr/le4Gjet4ub6Q2Ow5HUgiyJAdqvBS4VZvMQRy0IOu', 'FACEBOOK2', 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, NULL, '2011-10-02 14:51:46')
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM `placed_pictures` WHERE `placed_pictures`.`place_type` IN ('UserAvatar')
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM `users` WHERE `users`.`id` = 24
+  [1m[36mPicture Load (20.5ms)[0m  [1mselect distinct p.* from pictures p,placed_pictures pp where pp.place_type = 'UserAvatar' and pp.place_id = 24 and pp.picture_id = p.id[0m
+  [1m[35m (0.3ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.5ms)[0m  [1mROLLBACK[0m
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM `placed_pictures` WHERE `placed_pictures`.`place_type` IN ('UserAvatar')
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.5ms)[0m  SELECT 1 FROM `users` WHERE `users`.`email` = BINARY 'user1@localhost.localhost' LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO `users` (`authentication_token`, `confirmation_sent_at`, `confirmation_token`, `confirmed_at`, `created_at`, `current_sign_in_at`, `current_sign_in_ip`, `email`, `encrypted_password`, `facebook_id`, `failed_attempts`, `last_sign_in_at`, `last_sign_in_ip`, `locked_at`, `password_salt`, `remember_created_at`, `reset_password_sent_at`, `reset_password_token`, `sign_in_count`, `unlock_token`, `updated_at`) VALUES (NULL, NULL, NULL, NULL, '2011-10-02 14:58:33', NULL, NULL, 'user1@localhost.localhost', '$2a$04$pDyBuA009vJ27ZZ/i4JN0uT28m9V7HM1HYOMJHG/axkt.ukKPLNE.', 'FACEBOOK1', 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, NULL, '2011-10-02 14:58:33')[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO `pictures` (`caption`, `created_at`, `image_content_type`, `image_file_name`, `image_file_size`, `image_updated_at`, `updated_at`, `uri`) VALUES (NULL, '2011-10-02 14:58:33', NULL, NULL, NULL, NULL, '2011-10-02 14:58:33', NULL)
+[paperclip] Saving attachments.
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO `placed_pictures` (`created_at`, `picture_id`, `place_id`, `place_type`, `updated_at`) VALUES ('2011-10-02 14:58:33', 1, 25, 'UserAvatar', '2011-10-02 14:58:33')[0m
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM `placed_pictures` WHERE `placed_pictures`.`place_type` IN ('UserAvatar')[0m
+  [1m[35m (18.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.5ms)[0m  [1mSELECT 1 FROM `users` WHERE `users`.`email` = BINARY 'user2@localhost.localhost' LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO `users` (`authentication_token`, `confirmation_sent_at`, `confirmation_token`, `confirmed_at`, `created_at`, `current_sign_in_at`, `current_sign_in_ip`, `email`, `encrypted_password`, `facebook_id`, `failed_attempts`, `last_sign_in_at`, `last_sign_in_ip`, `locked_at`, `password_salt`, `remember_created_at`, `reset_password_sent_at`, `reset_password_token`, `sign_in_count`, `unlock_token`, `updated_at`) VALUES (NULL, NULL, NULL, NULL, '2011-10-02 14:58:33', NULL, NULL, 'user2@localhost.localhost', '$2a$04$yF7wHmQ21GevilKTVR2t6Ot1bnNvAOqzWUXF0LXnAl/jpK6cW.Wuq', 'FACEBOOK2', 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, NULL, '2011-10-02 14:58:33')
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `pictures` (`caption`, `created_at`, `image_content_type`, `image_file_name`, `image_file_size`, `image_updated_at`, `updated_at`, `uri`) VALUES (NULL, '2011-10-02 14:58:33', NULL, NULL, NULL, NULL, '2011-10-02 14:58:33', NULL)[0m
+[paperclip] Saving attachments.
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `placed_pictures` (`created_at`, `picture_id`, `place_id`, `place_type`, `updated_at`) VALUES ('2011-10-02 14:58:33', 2, 26, 'UserAvatar', '2011-10-02 14:58:33')
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM `placed_pictures` WHERE `placed_pictures`.`place_type` IN ('UserAvatar')
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  DELETE FROM `users` WHERE `users`.`id` = 26
+  [1m[36mPicture Load (19.0ms)[0m  [1mselect distinct p.* from pictures p,placed_pictures pp where pp.place_type = 'UserAvatar' and pp.place_id = 26 and pp.picture_id = p.id[0m
+[paperclip] Scheduling attachments for deletion.
+  [1m[35mSQL (0.4ms)[0m  DELETE FROM `pictures` WHERE `pictures`.`id` = 2
+[paperclip] Deleting attachments.
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM `placed_pictures` WHERE `placed_pictures`.`place_type` IN ('UserAvatar')
+  [1m[36m (24.2ms)[0m  [1mROLLBACK[0m
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM `placed_pictures` WHERE `placed_pictures`.`place_type` IN ('UserAvatar')
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.5ms)[0m  SELECT 1 FROM `users` WHERE `users`.`email` = BINARY 'user1@localhost.localhost' LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO `users` (`authentication_token`, `confirmation_sent_at`, `confirmation_token`, `confirmed_at`, `created_at`, `current_sign_in_at`, `current_sign_in_ip`, `email`, `encrypted_password`, `facebook_id`, `failed_attempts`, `last_sign_in_at`, `last_sign_in_ip`, `locked_at`, `password_salt`, `remember_created_at`, `reset_password_sent_at`, `reset_password_token`, `sign_in_count`, `unlock_token`, `updated_at`) VALUES (NULL, NULL, NULL, NULL, '2011-10-02 15:00:29', NULL, NULL, 'user1@localhost.localhost', '$2a$04$nu9/tRytdT4VW9kaA.UWyOjDS9M5amssU.U8BM6pMEbP2mRldOOTW', 'FACEBOOK1', 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, NULL, '2011-10-02 15:00:29')[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO `pictures` (`caption`, `created_at`, `image_content_type`, `image_file_name`, `image_file_size`, `image_updated_at`, `updated_at`, `uri`) VALUES (NULL, '2011-10-02 15:00:29', NULL, NULL, NULL, NULL, '2011-10-02 15:00:29', NULL)
+[paperclip] Saving attachments.
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `placed_pictures` (`created_at`, `picture_id`, `place_id`, `place_type`, `updated_at`) VALUES ('2011-10-02 15:00:29', 3, 27, 'UserAvatar', '2011-10-02 15:00:29')[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM `placed_pictures` WHERE `placed_pictures`.`place_type` IN ('UserAvatar')[0m
+  [1m[35m (0.6ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.4ms)[0m  [1mSELECT 1 FROM `users` WHERE `users`.`email` = BINARY 'user2@localhost.localhost' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `users` (`authentication_token`, `confirmation_sent_at`, `confirmation_token`, `confirmed_at`, `created_at`, `current_sign_in_at`, `current_sign_in_ip`, `email`, `encrypted_password`, `facebook_id`, `failed_attempts`, `last_sign_in_at`, `last_sign_in_ip`, `locked_at`, `password_salt`, `remember_created_at`, `reset_password_sent_at`, `reset_password_token`, `sign_in_count`, `unlock_token`, `updated_at`) VALUES (NULL, NULL, NULL, NULL, '2011-10-02 15:00:29', NULL, NULL, 'user2@localhost.localhost', '$2a$04$2ZbYZ/s8VEk3hOCHzqmp4.MQw4VRi/ldaQ4qN89UShbZOR8wThPuW', 'FACEBOOK2', 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, NULL, '2011-10-02 15:00:29')
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `pictures` (`caption`, `created_at`, `image_content_type`, `image_file_name`, `image_file_size`, `image_updated_at`, `updated_at`, `uri`) VALUES (NULL, '2011-10-02 15:00:29', NULL, NULL, NULL, NULL, '2011-10-02 15:00:29', NULL)[0m
+[paperclip] Saving attachments.
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `placed_pictures` (`created_at`, `picture_id`, `place_id`, `place_type`, `updated_at`) VALUES ('2011-10-02 15:00:29', 4, 28, 'UserAvatar', '2011-10-02 15:00:29')
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM `placed_pictures` WHERE `placed_pictures`.`place_type` IN ('UserAvatar')
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  DELETE FROM `users` WHERE `users`.`id` = 28
+  [1m[36m (0.2ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM `placed_pictures` WHERE `placed_pictures`.`place_type` IN ('UserAvatar')
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  SELECT 1 FROM `users` WHERE `users`.`email` = BINARY 'user1@localhost.localhost' LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO `users` (`authentication_token`, `confirmation_sent_at`, `confirmation_token`, `confirmed_at`, `created_at`, `current_sign_in_at`, `current_sign_in_ip`, `email`, `encrypted_password`, `facebook_id`, `failed_attempts`, `last_sign_in_at`, `last_sign_in_ip`, `locked_at`, `password_salt`, `remember_created_at`, `reset_password_sent_at`, `reset_password_token`, `sign_in_count`, `unlock_token`, `updated_at`) VALUES (NULL, NULL, NULL, NULL, '2011-10-02 15:00:57', NULL, NULL, 'user1@localhost.localhost', '$2a$04$Bo6GjevpoGfPOmFxcr6xo.Lufh/gFLeGbRuYJqz6ck4aSgdLeTXmS', 'FACEBOOK1', 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, NULL, '2011-10-02 15:00:57')[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `pictures` (`caption`, `created_at`, `image_content_type`, `image_file_name`, `image_file_size`, `image_updated_at`, `updated_at`, `uri`) VALUES (NULL, '2011-10-02 15:00:57', NULL, NULL, NULL, NULL, '2011-10-02 15:00:57', NULL)
+[paperclip] Saving attachments.
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `placed_pictures` (`created_at`, `picture_id`, `place_id`, `place_type`, `updated_at`) VALUES ('2011-10-02 15:00:57', 5, 29, 'UserAvatar', '2011-10-02 15:00:57')[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM `placed_pictures` WHERE `placed_pictures`.`place_type` IN ('UserAvatar')[0m
+  [1m[35m (0.5ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.3ms)[0m  [1mSELECT 1 FROM `users` WHERE `users`.`email` = BINARY 'user2@localhost.localhost' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `users` (`authentication_token`, `confirmation_sent_at`, `confirmation_token`, `confirmed_at`, `created_at`, `current_sign_in_at`, `current_sign_in_ip`, `email`, `encrypted_password`, `facebook_id`, `failed_attempts`, `last_sign_in_at`, `last_sign_in_ip`, `locked_at`, `password_salt`, `remember_created_at`, `reset_password_sent_at`, `reset_password_token`, `sign_in_count`, `unlock_token`, `updated_at`) VALUES (NULL, NULL, NULL, NULL, '2011-10-02 15:00:57', NULL, NULL, 'user2@localhost.localhost', '$2a$04$JgLJObj40.UJUVH2hoSI8ugi7JelxZEIBfL7Pqw2j818BckhU.uj2', 'FACEBOOK2', 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, NULL, '2011-10-02 15:00:57')
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `pictures` (`caption`, `created_at`, `image_content_type`, `image_file_name`, `image_file_size`, `image_updated_at`, `updated_at`, `uri`) VALUES (NULL, '2011-10-02 15:00:57', NULL, NULL, NULL, NULL, '2011-10-02 15:00:57', NULL)[0m
+[paperclip] Saving attachments.
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `placed_pictures` (`created_at`, `picture_id`, `place_id`, `place_type`, `updated_at`) VALUES ('2011-10-02 15:00:57', 6, 30, 'UserAvatar', '2011-10-02 15:00:57')
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM `placed_pictures` WHERE `placed_pictures`.`place_type` IN ('UserAvatar')
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  DELETE FROM `users` WHERE `users`.`id` = 30
+  [1m[36mUserAvatar Load (0.6ms)[0m  [1mSELECT `placed_pictures`.* FROM `placed_pictures` WHERE `placed_pictures`.`place_type` IN ('UserAvatar') AND `placed_pictures`.`place_id` = 30 LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  DELETE FROM `placed_pictures` WHERE `placed_pictures`.`place_type` IN ('UserAvatar') AND `placed_pictures`.`id` = 6
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM `placed_pictures` WHERE `placed_pictures`.`place_type` IN ('UserAvatar')
+  [1m[36m (19.3ms)[0m  [1mROLLBACK[0m
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (29.7ms)[0m  SELECT COUNT(*) FROM `placed_pictures` WHERE `placed_pictures`.`place_type` IN ('UserAvatar')
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  SELECT 1 FROM `users` WHERE `users`.`email` = BINARY 'user1@localhost.localhost' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `users` (`authentication_token`, `confirmation_sent_at`, `confirmation_token`, `confirmed_at`, `created_at`, `current_sign_in_at`, `current_sign_in_ip`, `email`, `encrypted_password`, `facebook_id`, `failed_attempts`, `last_sign_in_at`, `last_sign_in_ip`, `locked_at`, `password_salt`, `remember_created_at`, `reset_password_sent_at`, `reset_password_token`, `sign_in_count`, `unlock_token`, `updated_at`) VALUES (NULL, NULL, NULL, NULL, '2011-10-02 15:26:11', NULL, NULL, 'user1@localhost.localhost', '$2a$04$NCCM01ZeJz4aQWS4pIBXB.nf7rKJ2LUNni7b0cQJB6qRHmivTLmCK', 'FACEBOOK1', 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, NULL, '2011-10-02 15:26:11')[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO `pictures` (`caption`, `created_at`, `image_content_type`, `image_file_name`, `image_file_size`, `image_updated_at`, `updated_at`, `uri`) VALUES (NULL, '2011-10-02 15:26:11', NULL, NULL, NULL, NULL, '2011-10-02 15:26:11', NULL)
+[paperclip] Saving attachments.
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO `placed_pictures` (`created_at`, `picture_id`, `place_id`, `place_type`, `updated_at`) VALUES ('2011-10-02 15:26:11', 7, 31, 'UserAvatar', '2011-10-02 15:26:11')[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM `placed_pictures` WHERE `placed_pictures`.`place_type` IN ('UserAvatar')[0m
+  [1m[35m (421.0ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM `placed_pictures` WHERE `placed_pictures`.`place_type` IN ('UserAvatar')
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM `users` WHERE `users`.`id` = 31
+  [1m[36mUserAvatar Load (0.4ms)[0m  [1mSELECT `placed_pictures`.* FROM `placed_pictures` WHERE `placed_pictures`.`place_type` IN ('UserAvatar') AND `placed_pictures`.`place_id` = 31 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM `placed_pictures` WHERE `placed_pictures`.`place_type` IN ('UserAvatar')[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM `placed_pictures` WHERE `placed_pictures`.`place_type` IN ('UserAvatar')
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  SELECT 1 FROM `users` WHERE `users`.`email` = BINARY 'user1@localhost.localhost' LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO `users` (`authentication_token`, `confirmation_sent_at`, `confirmation_token`, `confirmed_at`, `created_at`, `current_sign_in_at`, `current_sign_in_ip`, `email`, `encrypted_password`, `facebook_id`, `failed_attempts`, `last_sign_in_at`, `last_sign_in_ip`, `locked_at`, `password_salt`, `remember_created_at`, `reset_password_sent_at`, `reset_password_token`, `sign_in_count`, `unlock_token`, `updated_at`) VALUES (NULL, NULL, NULL, NULL, '2011-10-02 15:28:21', NULL, NULL, 'user1@localhost.localhost', '$2a$04$aViIjYNV9ZUMgq3cnIPmDemdPllt.7qBY8PkvJMrB2LmJD5LHDfF2', 'FACEBOOK1', 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, NULL, '2011-10-02 15:28:21')[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO `pictures` (`caption`, `created_at`, `image_content_type`, `image_file_name`, `image_file_size`, `image_updated_at`, `updated_at`, `uri`) VALUES (NULL, '2011-10-02 15:28:21', NULL, NULL, NULL, NULL, '2011-10-02 15:28:21', NULL)
+[paperclip] Saving attachments.
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `placed_pictures` (`created_at`, `picture_id`, `place_id`, `place_type`, `updated_at`) VALUES ('2011-10-02 15:28:21', 8, 32, 'UserAvatar', '2011-10-02 15:28:21')[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM `placed_pictures` WHERE `placed_pictures`.`place_type` IN ('UserAvatar')[0m
+  [1m[35m (31.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.5ms)[0m  [1mSELECT 1 FROM `users` WHERE `users`.`email` = BINARY 'user2@localhost.localhost' LIMIT 1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO `users` (`authentication_token`, `confirmation_sent_at`, `confirmation_token`, `confirmed_at`, `created_at`, `current_sign_in_at`, `current_sign_in_ip`, `email`, `encrypted_password`, `facebook_id`, `failed_attempts`, `last_sign_in_at`, `last_sign_in_ip`, `locked_at`, `password_salt`, `remember_created_at`, `reset_password_sent_at`, `reset_password_token`, `sign_in_count`, `unlock_token`, `updated_at`) VALUES (NULL, NULL, NULL, NULL, '2011-10-02 15:28:21', NULL, NULL, 'user2@localhost.localhost', '$2a$04$AXvbyE44fGUPYG0a0W2fD.krGDBHSSNtMpdFZ3/BAfd1qxYUlv/KW', 'FACEBOOK2', 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, NULL, '2011-10-02 15:28:21')
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `pictures` (`caption`, `created_at`, `image_content_type`, `image_file_name`, `image_file_size`, `image_updated_at`, `updated_at`, `uri`) VALUES (NULL, '2011-10-02 15:28:21', NULL, NULL, NULL, NULL, '2011-10-02 15:28:21', NULL)[0m
+[paperclip] Saving attachments.
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO `placed_pictures` (`created_at`, `picture_id`, `place_id`, `place_type`, `updated_at`) VALUES ('2011-10-02 15:28:21', 9, 33, 'UserAvatar', '2011-10-02 15:28:21')
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM `placed_pictures` WHERE `placed_pictures`.`place_type` IN ('UserAvatar')
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM `users` WHERE `users`.`id` = 33
+  [1m[36mUserAvatar Load (0.5ms)[0m  [1mSELECT `placed_pictures`.* FROM `placed_pictures` WHERE `placed_pictures`.`place_type` IN ('UserAvatar') AND `placed_pictures`.`place_id` = 33 LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  DELETE FROM `placed_pictures` WHERE `placed_pictures`.`place_type` IN ('UserAvatar') AND `placed_pictures`.`id` = 9
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM `placed_pictures` WHERE `placed_pictures`.`place_type` IN ('UserAvatar')
+  [1m[36m (0.6ms)[0m  [1mROLLBACK[0m
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  Processing by DashboardController#index as HTML
+Rendered dashboard/index.html.haml within layouts/application (47.9ms)
+Completed 200 OK in 175ms (Views: 175.0ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM `friendships` 
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  SELECT 1 FROM `friendships` WHERE (`friendships`.`friend_id` = BINARY NULL AND `friendships`.`user_id` IS NULL) LIMIT 1
+  [1m[36m (0.4ms)[0m  [1mSELECT 1 FROM `users` WHERE `users`.`email` = BINARY 'user1@localhost.localhost' LIMIT 1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO `users` (`authentication_token`, `confirmation_sent_at`, `confirmation_token`, `confirmed_at`, `created_at`, `current_sign_in_at`, `current_sign_in_ip`, `email`, `encrypted_password`, `facebook_id`, `failed_attempts`, `last_sign_in_at`, `last_sign_in_ip`, `locked_at`, `password_salt`, `remember_created_at`, `reset_password_sent_at`, `reset_password_token`, `sign_in_count`, `unlock_token`, `updated_at`) VALUES (NULL, NULL, NULL, NULL, '2011-10-02 15:32:16', NULL, NULL, 'user1@localhost.localhost', '$2a$04$v4btYsw6GGekNU9xauBzMe7T5ocRfMH08Ms1a6d7SMZ9Ee6E7AVSW', 'FACEBOOK1', 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, NULL, '2011-10-02 15:32:16')
+  [1m[36m (0.5ms)[0m  [1mSELECT 1 FROM `users` WHERE `users`.`email` = BINARY 'user2@localhost.localhost' LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO `users` (`authentication_token`, `confirmation_sent_at`, `confirmation_token`, `confirmed_at`, `created_at`, `current_sign_in_at`, `current_sign_in_ip`, `email`, `encrypted_password`, `facebook_id`, `failed_attempts`, `last_sign_in_at`, `last_sign_in_ip`, `locked_at`, `password_salt`, `remember_created_at`, `reset_password_sent_at`, `reset_password_token`, `sign_in_count`, `unlock_token`, `updated_at`) VALUES (NULL, NULL, NULL, NULL, '2011-10-02 15:32:16', NULL, NULL, 'user2@localhost.localhost', '$2a$04$38a6yGsJnR2uCLs8334CfOcKX4S/J4cikiA8EaVR0syAMe2hhWG.2', 'FACEBOOK2', 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, NULL, '2011-10-02 15:32:16')
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO `friendships` (`created_at`, `friend_id`, `updated_at`, `user_id`) VALUES ('2011-10-02 15:32:16', 2, '2011-10-02 15:32:16', 1)[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.4ms)[0m  [1mSELECT 1 FROM `friendships` WHERE `friendships`.`user_id` = 2 AND `friendships`.`friend_id` = 1 LIMIT 1[0m
+creating reverse friendship
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mSELECT 1 FROM `friendships` WHERE (`friendships`.`friend_id` = BINARY 1 AND `friendships`.`user_id` = 2) LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `friendships` (`created_at`, `friend_id`, `updated_at`, `user_id`) VALUES ('2011-10-02 15:32:16', 1, '2011-10-02 15:32:16', 2)
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM `friendships` 
+  [1m[36m (18.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.5ms)[0m  SELECT 1 FROM `friendships` WHERE (`friendships`.`friend_id` = BINARY NULL AND `friendships`.`user_id` IS NULL) LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mSELECT 1 FROM `users` WHERE `users`.`email` = BINARY 'user3@localhost.localhost' LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO `users` (`authentication_token`, `confirmation_sent_at`, `confirmation_token`, `confirmed_at`, `created_at`, `current_sign_in_at`, `current_sign_in_ip`, `email`, `encrypted_password`, `facebook_id`, `failed_attempts`, `last_sign_in_at`, `last_sign_in_ip`, `locked_at`, `password_salt`, `remember_created_at`, `reset_password_sent_at`, `reset_password_token`, `sign_in_count`, `unlock_token`, `updated_at`) VALUES (NULL, NULL, NULL, NULL, '2011-10-02 15:32:16', NULL, NULL, 'user3@localhost.localhost', '$2a$04$HeXTM1AKqbilVG0lzhtYlONEuTanZe3UbUPjK7cgtGhixH7EZGnc6', 'FACEBOOK3', 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, NULL, '2011-10-02 15:32:16')
+  [1m[36m (0.3ms)[0m  [1mSELECT 1 FROM `users` WHERE `users`.`email` = BINARY 'user4@localhost.localhost' LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO `users` (`authentication_token`, `confirmation_sent_at`, `confirmation_token`, `confirmed_at`, `created_at`, `current_sign_in_at`, `current_sign_in_ip`, `email`, `encrypted_password`, `facebook_id`, `failed_attempts`, `last_sign_in_at`, `last_sign_in_ip`, `locked_at`, `password_salt`, `remember_created_at`, `reset_password_sent_at`, `reset_password_token`, `sign_in_count`, `unlock_token`, `updated_at`) VALUES (NULL, NULL, NULL, NULL, '2011-10-02 15:32:16', NULL, NULL, 'user4@localhost.localhost', '$2a$04$rXJD0Y7.cCiODHkvAtFMwOgdErOYbYvyqeCTdt402BoT0zoekc0fe', 'FACEBOOK4', 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, NULL, '2011-10-02 15:32:16')
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `friendships` (`created_at`, `friend_id`, `updated_at`, `user_id`) VALUES ('2011-10-02 15:32:16', 4, '2011-10-02 15:32:16', 3)[0m
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mSELECT 1 FROM `friendships` WHERE `friendships`.`user_id` = 4 AND `friendships`.`friend_id` = 3 LIMIT 1[0m
+creating reverse friendship
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.4ms)[0m  [1mSELECT 1 FROM `friendships` WHERE (`friendships`.`friend_id` = BINARY 3 AND `friendships`.`user_id` = 4) LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `friendships` (`created_at`, `friend_id`, `updated_at`, `user_id`) VALUES ('2011-10-02 15:32:16', 3, '2011-10-02 15:32:16', 4)
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM `friendships` 
+  [1m[36mFriendship Load (0.2ms)[0m  [1mSELECT `friendships`.* FROM `friendships` WHERE `friendships`.`id` = 3 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mDELETE FROM `friendships` WHERE `friendships`.`id` = 3[0m
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mFriendship Load (0.3ms)[0m  [1mSELECT `friendships`.* FROM `friendships` WHERE `friendships`.`user_id` = 4 AND `friendships`.`friend_id` = 3 LIMIT 1[0m
+destroying reverse friendship
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM `friendships` WHERE `friendships`.`id` = 4[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mFriendship Load (0.2ms)[0m  [1mSELECT `friendships`.* FROM `friendships` WHERE `friendships`.`user_id` = 3 AND `friendships`.`friend_id` = 4 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM `friendships` 
+  [1m[36m (0.5ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM `placed_pictures` WHERE `placed_pictures`.`place_type` IN ('UserAvatar')[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.3ms)[0m  [1mSELECT 1 FROM `users` WHERE `users`.`email` = BINARY 'user5@localhost.localhost' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `users` (`authentication_token`, `confirmation_sent_at`, `confirmation_token`, `confirmed_at`, `created_at`, `current_sign_in_at`, `current_sign_in_ip`, `email`, `encrypted_password`, `facebook_id`, `failed_attempts`, `last_sign_in_at`, `last_sign_in_ip`, `locked_at`, `password_salt`, `remember_created_at`, `reset_password_sent_at`, `reset_password_token`, `sign_in_count`, `unlock_token`, `updated_at`) VALUES (NULL, NULL, NULL, NULL, '2011-10-02 15:32:16', NULL, NULL, 'user5@localhost.localhost', '$2a$04$DryHyrZWFsyQ9PcQm9BXMu/K8V6lKN4a0tfSl6AOnJJ/36CRdmQ5S', 'FACEBOOK5', 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, NULL, '2011-10-02 15:32:16')
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO `pictures` (`caption`, `created_at`, `image_content_type`, `image_file_name`, `image_file_size`, `image_updated_at`, `updated_at`, `uri`) VALUES (NULL, '2011-10-02 15:32:16', NULL, NULL, NULL, NULL, '2011-10-02 15:32:16', NULL)[0m
+[paperclip] Saving attachments.
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO `placed_pictures` (`created_at`, `picture_id`, `place_id`, `place_type`, `updated_at`) VALUES ('2011-10-02 15:32:16', 1, 5, 'UserAvatar', '2011-10-02 15:32:16')
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM `placed_pictures` WHERE `placed_pictures`.`place_type` IN ('UserAvatar')
+  [1m[36m (0.7ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.5ms)[0m  SELECT 1 FROM `users` WHERE `users`.`email` = BINARY 'user6@localhost.localhost' LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO `users` (`authentication_token`, `confirmation_sent_at`, `confirmation_token`, `confirmed_at`, `created_at`, `current_sign_in_at`, `current_sign_in_ip`, `email`, `encrypted_password`, `facebook_id`, `failed_attempts`, `last_sign_in_at`, `last_sign_in_ip`, `locked_at`, `password_salt`, `remember_created_at`, `reset_password_sent_at`, `reset_password_token`, `sign_in_count`, `unlock_token`, `updated_at`) VALUES (NULL, NULL, NULL, NULL, '2011-10-02 15:32:16', NULL, NULL, 'user6@localhost.localhost', '$2a$04$c3HWqy4ys5IdPPq3Pt2lxOyfrjUC8jr5J8ZLFyFoeEkq6byu6ycYi', 'FACEBOOK6', 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, NULL, '2011-10-02 15:32:16')[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `pictures` (`caption`, `created_at`, `image_content_type`, `image_file_name`, `image_file_size`, `image_updated_at`, `updated_at`, `uri`) VALUES (NULL, '2011-10-02 15:32:16', NULL, NULL, NULL, NULL, '2011-10-02 15:32:16', NULL)
+[paperclip] Saving attachments.
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `placed_pictures` (`created_at`, `picture_id`, `place_id`, `place_type`, `updated_at`) VALUES ('2011-10-02 15:32:16', 2, 6, 'UserAvatar', '2011-10-02 15:32:16')[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM `placed_pictures` WHERE `placed_pictures`.`place_type` IN ('UserAvatar')[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM `users` WHERE `users`.`id` = 6[0m
+  [1m[35mUserAvatar Load (0.3ms)[0m  SELECT `placed_pictures`.* FROM `placed_pictures` WHERE `placed_pictures`.`place_type` IN ('UserAvatar') AND `placed_pictures`.`place_id` = 6 LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM `placed_pictures` WHERE `placed_pictures`.`place_type` IN ('UserAvatar') AND `placed_pictures`.`id` = 2[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM `placed_pictures` WHERE `placed_pictures`.`place_type` IN ('UserAvatar')[0m
+  [1m[35m (0.5ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'social_kitchen_test.user_actions' doesn't exist: SHOW FIELDS FROM `user_actions`
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.5ms)[0m  [1mSELECT 1 FROM `users` WHERE `users`.`email` = BINARY 'user1@localhost.localhost' LIMIT 1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO `users` (`authentication_token`, `confirmation_sent_at`, `confirmation_token`, `confirmed_at`, `created_at`, `current_sign_in_at`, `current_sign_in_ip`, `email`, `encrypted_password`, `facebook_id`, `failed_attempts`, `last_sign_in_at`, `last_sign_in_ip`, `locked_at`, `password_salt`, `remember_created_at`, `reset_password_sent_at`, `reset_password_token`, `sign_in_count`, `unlock_token`, `updated_at`) VALUES (NULL, NULL, NULL, NULL, '2011-10-02 19:44:03', NULL, NULL, 'user1@localhost.localhost', '$2a$04$lYAhgfxaMrUIdNYZI4GhCORQscK4G2fr2QKtUofI7jNj74ifWGIQy', 'FACEBOOK1', 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, NULL, '2011-10-02 19:44:03')
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (9.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.4ms)[0m  [1mSELECT 1 FROM `users` WHERE `users`.`email` = BINARY 'user1@localhost.localhost' LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO `users` (`authentication_token`, `confirmation_sent_at`, `confirmation_token`, `confirmed_at`, `created_at`, `current_sign_in_at`, `current_sign_in_ip`, `email`, `encrypted_password`, `facebook_id`, `failed_attempts`, `last_sign_in_at`, `last_sign_in_ip`, `locked_at`, `password_salt`, `remember_created_at`, `reset_password_sent_at`, `reset_password_token`, `sign_in_count`, `unlock_token`, `updated_at`) VALUES (NULL, NULL, NULL, NULL, '2011-10-02 20:03:46', NULL, NULL, 'user1@localhost.localhost', '$2a$04$hIdz0HH.fVSV7xLZbYeJM.QPmaOvx8.qo5ux.1MI9Ii82/0HDQLse', 'FACEBOOK1', 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, NULL, '2011-10-02 20:03:46')
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.6ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.5ms)[0m  [1mSELECT 1 FROM `users` WHERE `users`.`email` = BINARY 'user1@localhost.localhost' LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO `users` (`authentication_token`, `confirmation_sent_at`, `confirmation_token`, `confirmed_at`, `created_at`, `current_sign_in_at`, `current_sign_in_ip`, `email`, `encrypted_password`, `facebook_id`, `failed_attempts`, `last_sign_in_at`, `last_sign_in_ip`, `locked_at`, `password_salt`, `remember_created_at`, `reset_password_sent_at`, `reset_password_token`, `sign_in_count`, `unlock_token`, `updated_at`) VALUES (NULL, NULL, NULL, NULL, '2011-10-02 20:04:30', NULL, NULL, 'user1@localhost.localhost', '$2a$04$ERNlR0X/5whS0.P.nGUBz.WA.jQmm7wZAupv4H9Oin99baXUAcsyK', 'FACEBOOK1', 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, NULL, '2011-10-02 20:04:30')
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.6ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.7ms)[0m  [1mSELECT 1 FROM `users` WHERE `users`.`email` = BINARY 'user1@localhost.localhost' LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO `users` (`authentication_token`, `confirmation_sent_at`, `confirmation_token`, `confirmed_at`, `created_at`, `current_sign_in_at`, `current_sign_in_ip`, `email`, `encrypted_password`, `facebook_id`, `failed_attempts`, `last_sign_in_at`, `last_sign_in_ip`, `locked_at`, `password_salt`, `remember_created_at`, `reset_password_sent_at`, `reset_password_token`, `sign_in_count`, `unlock_token`, `updated_at`) VALUES (NULL, NULL, NULL, NULL, '2011-10-02 20:05:53', NULL, NULL, 'user1@localhost.localhost', '$2a$04$cAb1jwcRy4UQ0WI8W8WnKO/eDBygE7Y/zRsdda3/LbqL9njcnag9K', 'FACEBOOK1', 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, NULL, '2011-10-02 20:05:53')
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (43.1ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.7ms)[0m  [1mSELECT 1 FROM `users` WHERE `users`.`email` = BINARY 'user1@localhost.localhost' LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO `users` (`authentication_token`, `confirmation_sent_at`, `confirmation_token`, `confirmed_at`, `created_at`, `current_sign_in_at`, `current_sign_in_ip`, `email`, `encrypted_password`, `facebook_id`, `failed_attempts`, `last_sign_in_at`, `last_sign_in_ip`, `locked_at`, `password_salt`, `remember_created_at`, `reset_password_sent_at`, `reset_password_token`, `sign_in_count`, `unlock_token`, `updated_at`) VALUES (NULL, NULL, NULL, NULL, '2011-10-02 20:06:53', NULL, NULL, 'user1@localhost.localhost', '$2a$04$21tfO7bzes/Cuh.DJB61g.5gaSFEx2Yii7Z18b4yttVmLtOquGYcy', 'FACEBOOK1', 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, NULL, '2011-10-02 20:06:53')
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (15.4ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO `foodies` (`created_at`, `description`, `name`, `updated_at`) VALUES ('2011-10-03 22:13:06', 'this is a foodie', 'foodie1', '2011-10-03 22:13:06')[0m
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (46.4ms)[0m  [1mROLLBACK[0m
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `foodies` (`created_at`, `description`, `name`, `updated_at`) VALUES ('2011-10-03 22:13:36', 'this is a foodie', 'foodie1', '2011-10-03 22:13:36')[0m
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (24.1ms)[0m  [1mROLLBACK[0m
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (8.9ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO `foodies` (`created_at`, `description`, `name`, `updated_at`) VALUES ('2011-10-03 22:17:15', 'this is a foodie', 'foodie1', '2011-10-03 22:17:15')[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.5ms)[0m  SELECT 1 FROM `users` WHERE `users`.`email` = BINARY 'user1@localhost.localhost' LIMIT 1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO `users` (`authentication_token`, `confirmation_sent_at`, `confirmation_token`, `confirmed_at`, `created_at`, `current_sign_in_at`, `current_sign_in_ip`, `email`, `encrypted_password`, `facebook_id`, `failed_attempts`, `last_sign_in_at`, `last_sign_in_ip`, `locked_at`, `password_salt`, `remember_created_at`, `reset_password_sent_at`, `reset_password_token`, `sign_in_count`, `unlock_token`, `updated_at`) VALUES (NULL, NULL, NULL, NULL, '2011-10-03 22:17:16', NULL, NULL, 'user1@localhost.localhost', '$2a$04$IhvybVA2hJxMBojZTB7nneRQSoJeOdZ4EC.Wg.eDj02p1fKrx.3rK', 'FACEBOOK1', 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, NULL, '2011-10-03 22:17:16')[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (39.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.5ms)[0m  SELECT 1 FROM `users` WHERE `users`.`email` = BINARY 'user2@localhost.localhost' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `users` (`authentication_token`, `confirmation_sent_at`, `confirmation_token`, `confirmed_at`, `created_at`, `current_sign_in_at`, `current_sign_in_ip`, `email`, `encrypted_password`, `facebook_id`, `failed_attempts`, `last_sign_in_at`, `last_sign_in_ip`, `locked_at`, `password_salt`, `remember_created_at`, `reset_password_sent_at`, `reset_password_token`, `sign_in_count`, `unlock_token`, `updated_at`) VALUES (NULL, NULL, NULL, NULL, '2011-10-03 22:17:16', NULL, NULL, 'user2@localhost.localhost', '$2a$04$4Y3t6dA02HcnJOqQpG1zHu5mRkjh8VU6NF.w./oAijIbJ.74suIea', 'FACEBOOK2', 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, NULL, '2011-10-03 22:17:16')[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `foodies` (`created_at`, `description`, `name`, `updated_at`) VALUES ('2011-10-03 22:17:16', 'this is a foodie', 'foodie2', '2011-10-03 22:17:16')
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (3.0ms)[0m  ROLLBACK
