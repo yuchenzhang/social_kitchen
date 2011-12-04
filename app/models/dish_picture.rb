@@ -1,3 +1,0 @@
-class DishPicture < PlacedPicture
-  
-end

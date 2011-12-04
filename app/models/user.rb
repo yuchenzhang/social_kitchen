@@ -8,34 +8,20 @@ class User < ActiveRecord::Base
 
   # Setup accessible (or protected) attributes for your model  
   attr_accessible :email, :password, :password_confirmation, :facebook_id  
-    
-  belongs_to :region
+                     
   has_many  :comments
   has_many  :dishes
-  has_one   :private_menu
-  has_many  :friendships
-  has_many  :friends, :through => :friendships
+  has_many  :follow_actions, :class_name => "Action::Follow", :foreign_key => :subject_id
+  has_many  :followers, :through => :follow_actions
+  has_many  :be_followed_actions, :class_name => "Action::Follow", :foreign_key => :object_id
+  has_many  :followeds, :through => :be_followed_actions
+  has_many  :want_actions, :class_name => "Action::Want", :foreign_key => :subject_id
+  has_many  :dishes, :through => :want_actions
+  has_many  :avatars, :class_name => "Images::Avatar", :foreign_key => :owner_id
   
-  after_create :create_avatar, :find_friends
-  after_save  :find_friends
-  after_destroy :remove_avatar
+  after_save :find_friends
         
   attr_accessor :image
- 
-  def avatar
-    Picture.find_by_sql("select distinct p.* from pictures p,placed_pictures pp where pp.place_type = 'UserAvatar' and pp.place_id = #{id} and pp.picture_id = p.id").first
-  end
-  
-  def create_avatar
-    return unless @image
-    UserAvatar.create!(:picture => Picture.create!(:image =>@image), :place_id => self.id)
-  end
-  
-  def remove_avatar
-    if ua = UserAvatar.where(:place_id => self.id).first
-      ua.destroy
-    end
-  end
   
   
   def find_friends 

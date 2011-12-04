@@ -1,5 +1,4 @@
 SocialKitchen::Application.routes.draw do
-  get "dashboard/index"
 
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" } do
     get '/users/auth/:provider' => 'users/omniauth_callbacks#passthru'
@@ -33,9 +32,17 @@ SocialKitchen::Application.routes.draw do
   
   # resources :users do
   #     resources :dishes
-  #   end 
-  resources :recipes
-  resources :pictures      
+  #   end
+  namespace :user do
+    resources :dishes  
+  end
+  
+  namespace :restaurant do
+    resources :menus do
+       resources :dishes
+    end
+  end
+   
   # Sample resource route with sub-resources:
   #   resources :products do
   #     resources :comments, :sales
@@ -65,5 +72,5 @@ SocialKitchen::Application.routes.draw do
 
   # This is a legacy wild controller route that's not recommended for RESTful applications.
   # Note: This route will make all actions in every controller accessible via GET requests.
-  match ':controller(/:action(/:id(.:format)))'
+  # match ':controller(/:action(/:id(.:format)))'
 end

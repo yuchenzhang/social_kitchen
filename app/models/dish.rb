@@ -1,11 +1,12 @@
 class Dish < ActiveRecord::Base
-  belongs_to  :user
-  has_one     :recipe
-  has_many    :ingredients, :through => :recipe
-  belongs_to  :category, :class_name => "DishCategory"
-  has_many    :pictures, :class_name => "Picture", :finder_sql => 
-  %q(select distinct p.* from pictures p,placed_pictures pp where pp.place_type = 'DishPicture' and pp.place_id = #{id} and pp.picture_id = p.id)
-  
+  belongs_to  :restaurant
+  has_many    :used_ingredients, :dependent => :destroy
+  has_many    :ingredients, :through => :used_ingredients        
+  has_many    :pictures, :class_name => "::Images::DishPicture", :foreign_key => :owner_id, :dependent => :destroy
+  has_many    :want_actions, :class_name => "Action::Want", :foreign_key => :object_id
+  has_many    :users, :through => :want_actions
+  has_many    :comments
+  has_many    :writers, :through => :comments, :source => :user
   attr_accessor :images
   
   def to_json
@@ -16,19 +17,11 @@ class Dish < ActiveRecord::Base
      pictures.map{|p|"http://10.0.1.5:3000" + p.image.url(:original)}
   end 
   
-  def avatar
-    return unless user.avatar
-    "http://10.0.1.5:3000" + user.avatar.image.url(:small)
-  end
-  
   def after_create
     return unless @images
     @images.each do |im|
-      DishPicture.create!(:picture => Picture.create!(:image =>im), :place_id => self.id)
+      DishPicture.create!(:image =>im)
     end    
   end
-  
-  def after_destroy
-    pictures.destroy_all
-  end
+                                                                                                    
 end

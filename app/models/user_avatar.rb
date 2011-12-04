@@ -1,3 +1,0 @@
-class UserAvatar < PlacedPicture
-  
-end
