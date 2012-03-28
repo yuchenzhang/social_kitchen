@@ -11,18 +11,25 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111204223831) do
+ActiveRecord::Schema.define(:version => 20111207213334) do
 
   create_table "action_follows", :force => true do |t|
-    t.integer  "subject_id"
-    t.integer  "object_id"
+    t.integer  "user_id_follower"
+    t.integer  "user_id_followed"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "action_trieds", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "dish_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "action_wants", :force => true do |t|
-    t.integer  "subject_id"
-    t.integer  "object_id"
+    t.integer  "user_id"
+    t.integer  "dish_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

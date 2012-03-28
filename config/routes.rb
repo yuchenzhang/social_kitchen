@@ -38,9 +38,7 @@ SocialKitchen::Application.routes.draw do
   end
   
   namespace :restaurant do
-    resources :menus do
-       resources :dishes
-    end
+    resources :dishes
   end
    
   # Sample resource route with sub-resources:

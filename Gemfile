@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-gem "rails", "3.1.1"
+gem "rails", "3.1.3"
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -10,6 +10,7 @@ gem 'sass'
 gem 'devise'
 gem "oa-oauth", :require => "omniauth/oauth"
 gem 'haml'
+gem 'haml-rails'
 gem 'fb_graph'
 gem 'settingslogic'
 gem 'mongrel'
@@ -20,7 +21,7 @@ group :assets do
   gem 'sass-rails', "  ~> 3.1.0"
   gem 'coffee-rails', "~> 3.1.0"
   gem 'uglifier'
-end
+end 
 
 gem 'jquery-rails'
 

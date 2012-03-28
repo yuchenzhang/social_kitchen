@@ -1,0 +1,10 @@
+!!!
+%html
+  %head
+    %title
+      SocialMenu
+    = stylesheet_link_tag "bootstrap","bootstrap-override"
+    = csrf_meta_tags
+    = yield :head
+    %body
+      = yield

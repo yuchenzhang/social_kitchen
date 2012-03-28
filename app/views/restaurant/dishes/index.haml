@@ -7,7 +7,7 @@
           %a{:href=>"#"} Home
         %li
           %a{:href=>"#profile"} Profile
-
+           
 .container
   .content
     .page-header
@@ -16,18 +16,18 @@
           %a{:href => "#"}
             %img{:class => "thumbnail", :src => "http://placehold.it/90x90", :alt => ""}
       %h1
-        %small= "yuchenzhang@some.com"
+        %small= "Nanjing Resto"
     .row
       .span10
-        %blockquote
-          %h2#dish_name= "dutch stew stampot"
-          %ul.media-grid
-            %li
-              %a{:href => "#"}
-                %img{:class => "thumbnail", :src => "http://placehold.it/320x180"}
-            
+        - 10.times do
+          %blockquote
+            %h2#dish_name= "typical nanjing dish"
+            %ul.media-grid
+              %li
+                %a{:href => "#"}
+                  %img{:class => "thumbnail", :src => "http://placehold.it/320x180"}
+                
       .span4
 
   .footer
     %p &copy; SocialMenu 2011
-

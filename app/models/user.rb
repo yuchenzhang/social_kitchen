@@ -11,15 +11,17 @@ class User < ActiveRecord::Base
                      
   has_many  :comments
   has_many  :dishes
-  has_many  :follow_actions, :class_name => "Action::Follow", :foreign_key => :subject_id
+  has_many  :follow_actions, :class_name => "Action::Follow", :foreign_key => :user_id_followed
   has_many  :followers, :through => :follow_actions
-  has_many  :be_followed_actions, :class_name => "Action::Follow", :foreign_key => :object_id
+  has_many  :be_followed_actions, :class_name => "Action::Follow", :foreign_key => :user_id_follower
   has_many  :followeds, :through => :be_followed_actions
-  has_many  :want_actions, :class_name => "Action::Want", :foreign_key => :subject_id
-  has_many  :dishes, :through => :want_actions
+  has_many  :want_actions, :class_name => "Action::Want"
+  has_many  :wanted_dishes, :through => :want_actions, :source => :dish
+  has_many  :tried_actions, :class_name =>"Action::Tried"
+  has_many  :tried_dishes,  :through => :tried_actions, :source => :dish
   has_many  :avatars, :class_name => "Images::Avatar", :foreign_key => :owner_id
   
-  after_save :find_friends
+  # after_save :find_friends
         
   attr_accessor :image
   

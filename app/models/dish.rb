@@ -3,7 +3,7 @@ class Dish < ActiveRecord::Base
   has_many    :used_ingredients, :dependent => :destroy
   has_many    :ingredients, :through => :used_ingredients        
   has_many    :pictures, :class_name => "::Images::DishPicture", :foreign_key => :owner_id, :dependent => :destroy
-  has_many    :want_actions, :class_name => "Action::Want", :foreign_key => :object_id
+  has_many    :want_actions
   has_many    :users, :through => :want_actions
   has_many    :comments
   has_many    :writers, :through => :comments, :source => :user
